@@ -22,9 +22,9 @@ app.get('/', (req, res) => {
 });
 
 //Connect to DB
-mongoose.connect('mongodb+srv://ryuk:NFTlab%40123@cluster0.hifoa.mongodb.net/lab_alerts?retryWrites=true&w=majority', () => 
+mongoose.connect(process.env.MONGODB_URL, () => 
 console.log('connected to DB!')
 );
-app.listen(process.env.PORT, () => console.log('listening at 80')); //Take app var & configure listen port settings
+app.listen(process.env.PORT || 8080, () => console.log('listening at 80')); //Take app var & configure listen port settings
 
 
