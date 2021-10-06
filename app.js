@@ -25,6 +25,6 @@ app.get('/', (req, res) => {
 mongoose.connect('mongodb+srv://ryuk:NFTlab%40123@cluster0.hifoa.mongodb.net/lab_alerts?retryWrites=true&w=majority', () => 
 console.log('connected to DB!')
 );
-app.listen(80, () => console.log('listening at 80')); //Take app var & configure listen port settings
+app.listen(443, () => console.log('listening at 80')); //Take app var & configure listen port settings
 
 
