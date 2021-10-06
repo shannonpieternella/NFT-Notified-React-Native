@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="group">
+
+        
+    <section class="titel"><h1>Welcome to nifty Notified Where we tell you when your favorite projects are on sale! Ready to get notified?</h1>
+    </div>
+    
+
+
+    
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="" required="">
+            <label>Discord ID</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Contract</label>
+          </div>
+          <div class="user-box">
+            <input type="number" name="" required="">
+            <label>Alert price</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Alert Category</label>
+          </div>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Get notified
+          </a>
+        </form>
+      </div>
+    </section>
+
+
+    <script>
+        function myFunction() {
+            
+            var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({"title":"Hi my name is Tee","description":"I am a programmer"});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:3000/posts/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+}
+        
+        </script> 
+
+    
+    
+</body>
+</html>
