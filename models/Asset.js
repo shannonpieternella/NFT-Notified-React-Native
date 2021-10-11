@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PostSchema = mongoose.Schema({
+const PostAsset = mongoose.Schema({
 email_id: {
 type: String,
 required: true
@@ -13,6 +13,10 @@ contract: {
     type: String,
     required:true
     },
+    asset_number: {
+        type: Number,
+        required:true
+        },
     alert_price: {
         type: Number,
         required:true
@@ -28,8 +32,13 @@ contract: {
                 status: {
                     type: Number,
                     required:true
-                    }
+                    },
+// date: {
+// type: Date,
+// default: Date.now
+
+// }
 
 });
 
-module.exports = mongoose.model('alert_request', PostSchema);
+module.exports = mongoose.model('asset_numbers', PostAsset);

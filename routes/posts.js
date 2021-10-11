@@ -2,6 +2,9 @@ const { json } = require('body-parser');
 const { response } = require('express');
 const express = require('express');
 const Post = require('../models/Post');
+const Asset = require('../models/Asset');
+const sdk = require('api');
+const contracts = require('../models/contracts');
 
 
 const router = express.Router();
@@ -10,14 +13,24 @@ const router = express.Router();
 //Get back all the post
 router.get('/', async (req, res) => {
     try {
-const posts = await Post.find();
+const posts = await Post.find();;
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
-
-
         }
-    });
+});
+
+//Get back all the post
+router.get('/contracts', async (req, res) => {
+    try {
+const posts = await contracts.find();;
+res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
+
 
     //Submits a post
 
@@ -44,6 +57,33 @@ res.json(data);
     });
 
 });
+
+//save asset
+
+router.post('/assetnew', (req,res) => {
+    const post = new Asset({
+    email_id: req.body.email_id,
+    discord_id: req.body.discord_id,
+    contract: req.body.contract,
+    asset_number: req.body.asset_number,
+    alert_price: req.body.alert_price,
+    alert_type: req.body.alert_type,
+    alert_cat: req.body.alert_cat,
+    status: req.body.status
+    
+    
+    });
+    
+    post.save()
+    .then(data => {
+    res.json(data);
+    
+    })
+    .catch(err => { 
+        res.json({ message: err });
+        });
+    
+    });
 
 //Specific post
 router.get('/:postId', async (req, res) => {

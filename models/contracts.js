@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
-const PostSchema = mongoose.Schema({
+const PostSchemacontract = mongoose.Schema({
 email_id: {
 type: String,
 required: true
 },
-discord_id: {
-    type: String,
-    required:false
-    },
 contract: {
     type: String,
     required:true
@@ -28,8 +24,13 @@ contract: {
                 status: {
                     type: Number,
                     required:true
-                    }
+                    },
+date: {
+type: Date,
+default: Date.now
+
+}
 
 });
 
-module.exports = mongoose.model('alert_request', PostSchema);
+module.exports = mongoose.model('contract_details', PostSchemacontract);
