@@ -5,7 +5,7 @@ email_id: {
 type: String,
 required: true
 },
-discord_id: {
+user_id: {
     type: String,
     required:false
     },

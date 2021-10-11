@@ -37,7 +37,7 @@ res.json(posts);
 router.post('/', (req,res) => {
 const post = new Post({
 email_id: req.body.email_id,
-discord_id: req.body.discord_id,
+user_id: req.body.discord_id,
 contract: req.body.contract,
 alert_price: req.body.alert_price,
 alert_type: req.body.alert_type,
@@ -63,7 +63,7 @@ res.json(data);
 router.post('/assetnew', (req,res) => {
     const post = new Asset({
     email_id: req.body.email_id,
-    discord_id: req.body.discord_id,
+    user_id: req.body.discord_id,
     contract: req.body.contract,
     asset_number: req.body.asset_number,
     alert_price: req.body.alert_price,
