@@ -67,7 +67,7 @@ router.post('/assetnew', (req,res) => {
     contract: req.body.contract,
     asset_number: req.body.asset_number,
     alert_price: req.body.alert_price,
-    alert_type: req.body.alert_type,
+    // alert_type: req.body.alert_type,
     alert_cat: req.body.alert_cat,
     status: req.body.status
     

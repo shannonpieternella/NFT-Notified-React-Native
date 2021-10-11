@@ -21,10 +21,10 @@ contract: {
         type: Number,
         required:true
         },
-        alert_type: {
-            type: String,
-            required:true
-            },
+        // alert_type: {
+        //     type: String,
+        //     required:true
+        //     },
             alert_cat: {
                 type: String,
                 required:true
