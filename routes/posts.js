@@ -194,13 +194,13 @@ console.log('scanning')
     const countstatus = await Post.count({status: 0});
 while(countstatus > 0 || countstatus == 0){
     
-    if(countstatus > 0){
+    if(countstatus > 100){
         console.log('loop restarted now after 10 sec')
         await sleep2(10000)
         doSomethingMain()
     
     }
-    if(countstatus == 0){
+    if(countstatus == 100){
         console.log('Count is nu 0 10 min break')
         await sleep2(100000)
         doSomethingMain()
