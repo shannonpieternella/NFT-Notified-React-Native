@@ -78,39 +78,49 @@ $('h3').each((i, el) => {
 const title = $(el).text(); //extract values as text from html
 articles.push(title); // push title (extracted text value to array
 //console.log('testlink', testlink);
+
+})  //h3 selector bracket close
 console.log('scraped:', articles[2]);
 
 //Put here
 const doSomething = async () => {
     let i = 0;
-    for (let i = 0; i < 1; i++) {
+    if (1 == 1) {
        await sleep(10000)
       console.log('Waiting 10 sec: ', 'Round:', i)
-      console.log('alert: ', alert, 'is more then ', articles[2]);
+    //  console.log('alert: ', alert, 'is more then ', articles[2]);
       //condition check if price is higher ten given price
-if (  alert > articles[2] && status == 0 && cat == ">" ){
-    console.log('alert: ', alert, 'is more then ', articles[2]);
+if (  alert < articles[2] && status == 0 && cat == ">" ){
+    console.log('alert: ', articles[2], 'is more then ', alert);
     console.log('send email to ', mail);
     console.log('NFT ', testlink);
 
+    const obj = {
+        weblink: testlink,
+        alertprice: alert,
+        webprice: articles[2]
+        }
     //send mail
-    // const message = {
-    //     to: mail,
-    //     from: {
-    //         name: 'NiftyNotified',
-    //         email: 'team@niftynotified.com',
+    const message = {
+        to: mail,
+        from: {
+            name: 'NiftyNotified',
+            email: 'team@niftynotified.com',
         
-    //     },
-    //     subject: 'Hello from sendgrid',
-    //     text:'The floor price is lower then ......',
-    //     html:'<center><h1 style="color:black" style="font-size:500px">You have a new notification<h1></center><center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center><center><p>Apegang NFT floorprice of 0.64 became below price 0.51</p></center><center><a href="https://opensea.io">Go to collection page</a></center>'
+        },
+        subject: 'The floor price whent higher then ......',
+        text:'The floor price went higher then ......',
+        html:`<center>
+        <h1 style="color:black" style="font-size:500px">The floor price of ${obj.webprice} went higher then ${obj.alertprice}! <h1></center>
+        <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
+        <center><p>NFT Floorprice just went higher then ${obj.alertprice}</p></center>
+        <center><a href= ${obj.weblink}>Go to collection page!</a></center>`
+        };
         
-    //     };
-        
-    //     sgMail
-    //     .send(message)
-    //     .then((respose) => console.log('Email sent...'))
-    //     .catch((error) => console.log(error.message));
+        sgMail
+        .send(message)
+        .then((respose) => console.log('Email sent...'))
+        .catch((error) => console.log(error.message));
 
     // //end send mail
     
@@ -121,29 +131,39 @@ if (  alert > articles[2] && status == 0 && cat == ">" ){
     }}
     
     //condition check if price is lower ten given price
-    if (  alert < articles[2] && status == 0 && cat == "<" ){
-    console.log('alert: ', alert, 'is lower then ', articles[2]);
+    if (  alert > articles[2] && status == 0 && cat == "<" ){
+    console.log('alert: ', articles[2], 'is lower then ', alert);
     console.log('send email to ', mail);
     console.log('NFT ', testlink);
     
 //send mail
-// const message = {
-//     to: mail,
-//     from: {
-//         name: 'NiftyNotified',
-//         email: 'team@niftynotified.com',
+const obj = {
+weblink: testlink,
+alertprice: alert,
+webprice: articles[2]
+}
+
+const message = {
+    to: mail,
+    from: {
+        name: 'NiftyNotified',
+        email: 'team@niftynotified.com',
     
-//     },
-//     subject: 'Hello from sendgrid',
-//     text:'The floor price is lower then ......',
-//     html:'<center><h1 style="color:black" style="font-size:500px">You have a new notification<h1></center><center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center><center><p>Apegang NFT floorprice of 0.64 became below price 0.51</p></center><center><a href="https://opensea.io">Go to collection page</a></center>'
+    },
+    subject: 'The floor price went lower then ......',
+    text:'The floor price went lower then ......',
+    html:`<center>
+    <h1 style="color:black" style="font-size:500px">The floor price of ${obj.webprice} went lower then ${obj.alertprice}! <h1></center>
+    <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
+    <center><p>NFT Floorprice just went lower then ${obj.alertprice}</p></center>
+    <center><a href= ${obj.weblink}>Go to collection page</a></center>`
     
-//     };
+    };
     
-//     sgMail
-//     .send(message)
-//     .then((respose) => console.log('Email sent...'))
-//     .catch((error) => console.log(error.message));
+    sgMail
+    .send(message)
+    .then((respose) => console.log('Email sent...'))
+    .catch((error) => console.log(error.message));
 
 //end send mail
 
@@ -154,7 +174,7 @@ if (  alert > articles[2] && status == 0 && cat == ">" ){
     const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
     }}
       
-      i++
+    //   i++
     }
   }
   
@@ -165,7 +185,7 @@ if (  alert > articles[2] && status == 0 && cat == ">" ){
 
 
 }) //scraperapiClient.get(testlink).then
-})  //h3 selector bracket close
+
 
 }// countstatus bracket close
 // console.log('timeout');
@@ -194,13 +214,13 @@ console.log('scanning')
     const countstatus = await Post.count({status: 0});
 while(countstatus > 0 || countstatus == 0){
     
-    if(countstatus > 100){
+    if(countstatus > 0){
         console.log('loop restarted now after 10 sec')
         await sleep2(10000)
         doSomethingMain()
     
     }
-    if(countstatus == 100){
+    if(countstatus == 0){
         console.log('Count is nu 0 10 min break')
         await sleep2(100000)
         doSomethingMain()
