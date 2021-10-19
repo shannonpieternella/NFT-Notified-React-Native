@@ -129,7 +129,7 @@ if (  alert < articles[2] && status == 0 && cat == ">" ){
       </a></center>
       <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
       <center>
-      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://google.com">unsubscribe</a> here.</p>
+      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
   </center>`
     
     };
@@ -181,7 +181,7 @@ const message = {
   </a></center>
   <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
   <center>
-      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://google.com">unsubscribe</a> here.</p>
+      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
   </center>`
     };
     
