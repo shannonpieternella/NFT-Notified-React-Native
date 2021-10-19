@@ -122,7 +122,7 @@ if (  alert < articles[2] && status == 0 && cat == ">" ){
         <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:650px;height:100px;">
      <center>
         <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
-        <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
+        <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
         <center><p>NFT Floorprice just went higher then ${obj.alertprice}</p></center>
         <center><a href="${obj.weblink}">
         <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:250px;height:75px;">
@@ -174,7 +174,7 @@ const message = {
     <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:650px;height:100px;">
     <center>
     <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
-    <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
+    <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
     <center><p>NFT Floorprice just went lower then ${obj.alertprice}</p></center>
     <center><a href="${obj.weblink}">
     <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="niftynotified" style="width:250px;height:75px;">
