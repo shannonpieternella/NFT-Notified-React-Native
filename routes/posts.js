@@ -73,13 +73,20 @@ scraperapiClient.get(testlink) //enter link from user in database
 .then(response => {
 html = response;
 const $ = cheerio.load(html);
+
+//Scrape name
+
+const productName = $('.Blockreact__Block-sc-1xf18x6-0');
+   const outputName = productName.find('h2').text();
+   console.log('Output', outputName);
+
+
 const articles = [] //array with data html values
 $('h3').each((i, el) => {
 const title = $(el).text(); //extract values as text from html
 articles.push(title); // push title (extracted text value to array
-//console.log('testlink', testlink);
-
 })  //h3 selector bracket close
+
 console.log('scraped:', articles[2]);
 
 //Put here
@@ -98,7 +105,8 @@ if (  alert < articles[2] && status == 0 && cat == ">" ){
     const obj = {
         weblink: testlink,
         alertprice: alert,
-        webprice: articles[2]
+        webprice: articles[2],
+        nftname: outputName
         }
     //send mail
     const message = {
@@ -108,14 +116,23 @@ if (  alert < articles[2] && status == 0 && cat == ">" ){
             email: 'team@niftynotified.com',
         
         },
-        subject: 'The floor price whent higher then ......',
-        text:'The floor price went higher then ......',
-        html:`<center>
-        <h1 style="color:black" style="font-size:500px">The floor price of ${obj.webprice} went higher then ${obj.alertprice}! <h1></center>
+        subject: `Price alert for ${obj.nftname}`,
+        text:`The floor price went higher then ${obj.webprice}`,
+        html:`
+        <img src="https://s3.amazonaws.com/appforest_uf/f1634603897722x806260936344183000/unnamed%20%283%29.png" alt="Niftynotified" style="width:500px;height:100px;">
+     <center>
+        <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
         <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
         <center><p>NFT Floorprice just went higher then ${obj.alertprice}</p></center>
-        <center><a href= ${obj.weblink}>Go to collection page!</a></center>`
-        };
+        <center><a href="${obj.weblink}">
+        <img src="https://thumbs.dreamstime.com/b/l-199324440.jpg" alt="Nifty notified" style="width:200px;height:75px;">
+      </a></center>
+      <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
+      <center>
+      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://google.com">unsubscribe</a> here.</p>
+  </center>`
+    
+    };
         
         sgMail
         .send(message)
@@ -140,7 +157,8 @@ if (  alert < articles[2] && status == 0 && cat == ">" ){
 const obj = {
 weblink: testlink,
 alertprice: alert,
-webprice: articles[2]
+webprice: articles[2],
+nftname: outputName
 }
 
 const message = {
@@ -150,14 +168,21 @@ const message = {
         email: 'team@niftynotified.com',
     
     },
-    subject: 'The floor price went lower then ......',
-    text:'The floor price went lower then ......',
-    html:`<center>
-    <h1 style="color:black" style="font-size:500px">The floor price of ${obj.webprice} went lower then ${obj.alertprice}! <h1></center>
+    subject: `Price alert for ${obj.nftname}`,
+        text:`The floor price went lower then ${obj.webprice}`,
+    html:`
+    <img src="https://s3.amazonaws.com/appforest_uf/f1634603897722x806260936344183000/unnamed%20%283%29.png" alt="Niftynotified" style="width:500px;height:100px;">
+    <center>
+    <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
     <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="200" height="200"></center>
     <center><p>NFT Floorprice just went lower then ${obj.alertprice}</p></center>
-    <center><a href= ${obj.weblink}>Go to collection page</a></center>`
-    
+    <center><a href="${obj.weblink}">
+    <img src="https://thumbs.dreamstime.com/b/l-199324440.jpg" alt="niftynotified" style="width:200px;height:75px;">
+  </a></center>
+  <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
+  <center>
+      <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://google.com">unsubscribe</a> here.</p>
+  </center>`
     };
     
     sgMail
