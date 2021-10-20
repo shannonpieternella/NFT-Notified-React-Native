@@ -97,11 +97,11 @@ while(0 == 0){
         
         //Put here
         const doSomething = async () => {
-            console.log('stuck');
+           
              if (1 == 1) {
             
               console.log('check i status: ', i ,'countdb', countstatus, 'alertsetting',alert,'category ',cat , 'Website price', articles[2]);
-              console.log('stuck 2');
+              
               //condition check if price is higher ten given price
         if (  alert < articles[2] && status == 0 && cat == ">" ){
             console.log('alert: ', articles[2], 'is more then ', alert);
@@ -210,7 +210,7 @@ while(0 == 0){
           }
           doSomething();
         }) //scraperapiClient.get(testlink).then
-
+        console.log('stuck voor reset');
         if(i == countstatus){
 
         i=0;
