@@ -47,7 +47,7 @@ while(0 == 0){
     const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
     // console.log('status count: ', countstatus);
-     console.log('status i: ', i);
+    //  console.log('status i: ', i);
  
 
     while ( i < countstatus) {
