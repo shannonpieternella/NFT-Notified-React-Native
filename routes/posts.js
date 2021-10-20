@@ -206,9 +206,9 @@ const doSomethingMain = async () => {
             }}
             
            
-        }}
+      
           doSomething();
-       
+        }}
         }) //scraperapiClient.get(testlink).then
         
         
