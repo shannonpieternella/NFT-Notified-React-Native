@@ -133,7 +133,7 @@ while(0 == 0){
                 <center><a href="${obj.weblink}">
                 <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:250px;height:75px;">
               </a></center>
-              <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
+              <center><p>You can check out the official collection </p><a href = "${obj.weblink}">here</a></center>
               <center>
               <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
           </center>`
@@ -185,7 +185,7 @@ while(0 == 0){
             <center><a href="${obj.weblink}">
             <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="niftynotified" style="width:250px;height:75px;">
           </a></center>
-          <center><p>You can check out the official website </p><a href = "${obj.weblink}">here</a></center>
+          <center><p>You can check out the official collection </p><a href = "${obj.weblink}">here</a></center>
           <center>
               <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
           </center>`
