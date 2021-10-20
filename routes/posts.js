@@ -50,7 +50,7 @@ while(0 == 0){
     //  console.log('status i: ', i);
  
 
-    while ( i < countstatus) {
+    while (true) {
         console.log('scanning started');
 
        
