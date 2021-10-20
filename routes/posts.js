@@ -214,11 +214,11 @@ while(0 == 0){
         if(i == countstatus){
 
         i=0;
-console.log('start from 0');
+        console.log('start from 0');
         }else{
 
             i++
-            console.log('loop through', i);
+            console.log('loop nr', i);
 
         }
          
