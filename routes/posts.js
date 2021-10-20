@@ -212,20 +212,17 @@ const doSomethingMain = async () => {
         }) //scraperapiClient.get(testlink).then
         
         
-            i++
-            console.log('loop nr', i);
+            
 
         
         
         //end here
     
+        i++;
+            console.log('loop nr', i);
         
-        
-            }
-        
-        
-            //end system
-
+            }//end system
+            
 
 
       }//end while loop
