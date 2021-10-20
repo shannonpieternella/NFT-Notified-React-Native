@@ -41,7 +41,7 @@ res.json(posts);
 const doSomethingMain = async () => {
     let i = 0;
     
-while(0 == 0){
+    while (true) {
     
     //count collection and use for loop.
     const count = await Post.count();            
@@ -50,7 +50,7 @@ while(0 == 0){
     //  console.log('status i: ', i);
  
 
-    while (true) {
+    
         console.log('scanning started');
 
        
@@ -234,7 +234,7 @@ while(0 == 0){
 
 
       }//end for loop countstatus
-    }//end 1st while loop
+
     
       
     doSomethingMain();
