@@ -39,10 +39,10 @@ res.json(posts);
 
 
 const doSomethingMain = async () => {
-    let i = 0;
+    
     
     while (true) {
-    
+        let i = 0;
     //count collection and use for loop.
     const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
@@ -206,9 +206,9 @@ const doSomethingMain = async () => {
             }}
             
            
-     
-          doSomething();
         }}
+          doSomething();
+       
         }) //scraperapiClient.get(testlink).then
         
         
@@ -216,7 +216,7 @@ const doSomethingMain = async () => {
             console.log('loop nr', i);
 
         
-         
+        
         //end here
     
         
