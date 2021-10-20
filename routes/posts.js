@@ -100,7 +100,7 @@ while(0 == 0){
             console.log('stuck');
              if (1 == 1) {
             
-              console.log('check status: ', i ,'countdb', countstatus, 'alert', alert, 'articles', articles[2]);
+              console.log('check i status: ', i ,'countdb', countstatus, 'alert', alert, 'articles', articles[2]);
               console.log('stuck 2');
               //condition check if price is higher ten given price
         if (  alert < articles[2] && status == 0 && cat == ">" ){
@@ -210,7 +210,18 @@ while(0 == 0){
           }
           doSomething();
         }) //scraperapiClient.get(testlink).then
-          i++
+
+        if(i == countstatus){
+
+        i=0;
+console.log('start from 0');
+        }else{
+
+            i++
+            console.log('loop through', i);
+
+        }
+         
         //end here
     
         
