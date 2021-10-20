@@ -233,8 +233,7 @@ const doSomethingMain = async () => {
 
 
 
-      }//end for loop countstatus
-
+      }//end while loop
     
       
     doSomethingMain();
