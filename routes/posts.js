@@ -47,7 +47,7 @@ while(0 == 0){
 }
    
 
-    while ( countstatus > i) {
+    while ( i < countstatus) {
         console.log('scanning started');
 
        
