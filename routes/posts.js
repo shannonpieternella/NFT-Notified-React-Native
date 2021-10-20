@@ -36,16 +36,19 @@ res.json(posts);
 
 //start system
 
+
+
 const doSomethingMain = async () => {
-while(0 == 0){
     let i = 0;
+    
+while(0 == 0){
+    
     //count collection and use for loop.
     const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
-    console.log('status count: ', countstatus);
-
-}
-   
+    // console.log('status count: ', countstatus);
+     console.log('status i: ', i);
+ 
 
     while ( i < countstatus) {
         console.log('scanning started');
@@ -73,7 +76,7 @@ while(0 == 0){
         html = response;
         const $ = cheerio.load(html);
         
-        }) //scraperapiClient.get(testlink).then
+        
         
         //Scrape name
         
@@ -81,23 +84,24 @@ while(0 == 0){
            const outputName = productName.find('h2').text();
            console.log('Output', outputName);
         
-        
-        const articles = [] //array with data html values
+           
+        const articles = []; //array with data html values
         $('h3').each((i, el) => {
         const title = $(el).text(); //extract values as text from html
+        
         articles.push(title); // push title (extracted text value to array
         })  //h3 selector bracket close
         
         console.log('scraped:', articles[2]);
+    
         
-        doSomething();
         //Put here
         const doSomething = async () => {
-            let i = 0;
-            if (1 == 1) {
-               await sleep(10000)
-              console.log('Waiting 10 sec: ', 'Round:', i)
-           
+            console.log('stuck');
+             if (1 == 1) {
+            
+              console.log('check status: ', i ,'countdb', countstatus, 'alert', alert, 'articles', articles[2]);
+              console.log('stuck 2');
               //condition check if price is higher ten given price
         if (  alert < articles[2] && status == 0 && cat == ">" ){
             console.log('alert: ', articles[2], 'is more then ', alert);
@@ -121,7 +125,7 @@ while(0 == 0){
                 subject: `Price alert for ${obj.nftname}`,
                 text:`The floor price went higher then ${obj.webprice}`,
                 html:`
-                <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:650px;height:100px;">
+                <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
              <center>
                 <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
                 <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
@@ -200,14 +204,15 @@ while(0 == 0){
             async function mainnft() {
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
-              
+            
            
             }
           }
-          
+          doSomething();
+        }) //scraperapiClient.get(testlink).then
           i++
         //end here
-        
+    
         
         
             }
@@ -218,12 +223,11 @@ while(0 == 0){
 
 
       }//end for loop countstatus
-
+    }//end 1st while loop
     
       
-    
+    doSomethingMain();
 
-doSomethingMain();
 
 
   
