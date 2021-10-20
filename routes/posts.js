@@ -210,17 +210,12 @@ const doSomethingMain = async () => {
           }
           doSomething();
         }) //scraperapiClient.get(testlink).then
-        console.log('stuck voor reset');
-        if(i == countstatus){
-
-        i=0;
-        console.log('start from 0');
-        }else{
-
+        
+        
             i++
             console.log('loop nr', i);
 
-        }
+        
          
         //end here
     
