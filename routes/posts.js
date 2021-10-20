@@ -3,6 +3,7 @@ const { response } = require('express');
 const express = require('express');
 const Post = require('../models/Post');
 const Asset = require('../models/Asset');
+const email = require('../models/email');
 const sdk = require('api');
 const contracts = require('../models/contracts');
 const cheerio = require('cheerio');
@@ -307,6 +308,61 @@ res.json(data);
     });
 
 });
+
+  //Send mail
+
+  router.post('/mail', (req,res) => {
+    const postmail = new email({
+    email_id: req.body.email_id,
+    date: req.body.date
+    
+    });
+
+    //send mail
+
+    
+    const message = {
+        to: `${postmail.email_id}`,
+        from: {
+            name: 'NiftyNotified',
+            email: 'team@niftynotified.com',
+        
+        },
+        subject: `Confirm Email`,
+        text:`Confirm email`,
+        html:`
+        <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:650px;height:100px;">
+     <center>
+        <h1 style="color:black" style="font-size:500px">Welcome to Niftynotified <h1></center>
+        <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
+        <center><p>Confirm your email so our notifications won't miss your inbox</p></center>
+        <center><a href="niftynotified.com/email_confirmed/${postmail.email_id}">
+        <img src="https://cdn.pixabay.com/photo/2012/05/07/11/11/blue-48102_1280.png" alt="Nifty notified" style="width:250px;height:75px;">
+      </a></center>
+      <center>
+      <p>If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
+  </center>`
+    
+    };
+        
+        sgMail
+        .send(message)
+        .then((respose) => console.log('Email sent to...', `${postmail.email_id}`))
+        .catch((error) => console.log(error.message));
+
+    // //end send mail
+    
+    postmail.save()
+    .then(data => {
+    res.json(data);
+    
+    })
+    .catch(err => { 
+        res.json({ message: err });
+        });
+    
+    });
+    
 
 //save asset
 
