@@ -270,7 +270,7 @@ res.json(posts);
 router.get('/restart', async (req, res) => {
     try {
         doSomethingMain();
-        console.log('restarted now');
+        res.json('restarted now');
     } catch (err) {
         res.json({ message: err });
         }
