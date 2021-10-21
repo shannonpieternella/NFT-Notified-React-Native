@@ -210,9 +210,9 @@ const doSomethingMain = async () => {
             async function mainnft() {
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
-            doSomething(); 
+             
         }}
-      
+        doSomething();
           
 
           
