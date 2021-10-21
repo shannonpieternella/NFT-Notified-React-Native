@@ -311,8 +311,8 @@ res.json(data);
         <h1 style="color:black" style="font-size:500px">Welcome to Niftynotified <h1></center>
         <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
         <center><p>Confirm your email so our notifications won't miss your inbox</p></center>
-        <center><a href="niftynotified.com/email_confirmed/${postmail.email_id}">
-        <img src="https://cdn.pixabay.com/photo/2012/05/07/11/11/blue-48102_1280.png" alt="Nifty notified" style="width:250px;height:75px;">
+        <center><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
+        <img src="https://s3.amazonaws.com/appforest_uf/f1634781766593x789815730160737400/CNFRM.png" alt="Nifty notified" style="width:250px;height:75px;">
       </a></center>
       <center>
       <p>If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
