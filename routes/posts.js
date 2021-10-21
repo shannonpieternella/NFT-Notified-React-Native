@@ -266,6 +266,16 @@ res.json(posts);
         }
 });
 
+//refresh db
+router.get('/restart', async (req, res) => {
+    try {
+        doSomethingMain();
+        console.log('restarted now');
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
 
 
     //Submits a post
