@@ -241,7 +241,7 @@ const doSomethingMain = async () => {
             
       }
       catch (exception_var) {
-        console.log({ message: err });
+        console.log('error catch');
       } // end catch
     
 
