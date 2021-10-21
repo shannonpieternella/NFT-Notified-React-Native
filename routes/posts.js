@@ -155,6 +155,7 @@ const doSomethingMain = async () => {
         
             // //end send mail
             status = 1;
+            console.log('status reset ', status);
             mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
@@ -209,6 +210,7 @@ const doSomethingMain = async () => {
         //end send mail
         
             status = 1;
+            console.log('status reset ', status);
             mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
