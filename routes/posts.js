@@ -171,14 +171,15 @@ const doSomethingMain = async () => {
             console.log('send email to ', mail);
             console.log('NFT ', testlink);
             
-        //send mail
+        //send mail save obj
         const obj = {
         weblink: testlink,
         alertprice: alert,
         webprice: articles[2],
         nftname: outputName
-        }
+        } //end obj
         
+        //begin message
         const message = {
             to: mail,
             from: {
@@ -201,7 +202,7 @@ const doSomethingMain = async () => {
           <center>
               <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
           </center>`
-            };
+            }; //end message
             
             sgMail
             .send(message)
@@ -228,7 +229,7 @@ const doSomethingMain = async () => {
         
         }) //scraperapiClient.get(testlink).then
         
-        if(i == countstatus-1){
+        if(i == countstatus){
             i=0;
             console.log('reset countt')
 
