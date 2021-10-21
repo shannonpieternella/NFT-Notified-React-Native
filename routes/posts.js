@@ -277,6 +277,20 @@ router.get('/restart', async (req, res) => {
 });
 
 
+    //Submits a post
+
+    router.post('/restartnow', (req,res) => {
+        
+        
+       doSomethingMain();
+        console('restartnow', req.email_id);
+        
+        })
+        .catch(err => { 
+            res.json({ message: err });
+            });
+        
+       
 
     //Submits a post
 
