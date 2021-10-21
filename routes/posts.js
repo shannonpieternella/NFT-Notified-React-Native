@@ -158,8 +158,8 @@ const doSomethingMain = async () => {
             // mainnft(); //update status function 
             // set set status to 1
             
-                console.log('set set status > to 1');
-            const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
+            //     console.log('set set status > to 1');
+            // const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }// einde if statement
              
 
@@ -215,8 +215,8 @@ const doSomethingMain = async () => {
             //update status function 
             
             
-                console.log('set set status < to 1');
-            const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
+            //     console.log('set set status < to 1');
+            // const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }//einde if statement
              
         }}
