@@ -40,7 +40,8 @@ res.json(posts);
 
 const doSomethingMain = async () => {
     
-    let i=0;
+    try {
+        let i=0;
     while (true) {
         
         
@@ -238,6 +239,11 @@ const doSomethingMain = async () => {
         
             }//end system
             
+      }
+      catch (exception_var) {
+        res.json({ message: err });
+      } // end catch
+    
 
 
       }//end while loop
