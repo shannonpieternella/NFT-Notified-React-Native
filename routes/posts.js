@@ -157,11 +157,11 @@ const doSomethingMain = async () => {
             
             // mainnft(); //update status function 
             // set set status to 1
-            async function mainnft() {
+            
                 console.log('set set status > to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
-            }}
-            mainnft(); 
+            }// einde if statement
+             
 
             console.log('time out 10sec plus status is -->', status);
             await sleep(10000);
@@ -213,14 +213,14 @@ const doSomethingMain = async () => {
         
             //update status function 
             
-            async function mainnft() {
+            
                 console.log('set set status < to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
-            }}
+            }//einde if statement
              
         }}
         doSomething();
-        mainnft(); 
+        
 
           
            
