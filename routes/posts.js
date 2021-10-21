@@ -154,14 +154,14 @@ const doSomethingMain = async () => {
                 .catch((error) => console.log(error.message));
         
             // //end send mail
-            status = 1;
-            console.log('status reset ', status);
-            mainnft(); //update status function 
+            
+            // mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
-                console.log('set set status to 1');
+                console.log('set set status > to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
+            mainnft(); 
 
             console.log('time out 10sec plus status is -->', status);
             await sleep(10000);
@@ -210,18 +210,17 @@ const doSomethingMain = async () => {
         
         //end send mail
         
-            status = 1;
-            console.log('status reset ', status);
-            mainnft(); //update status function 
+        
+            //update status function 
             
             async function mainnft() {
-                console.log('set set status to 1');
+                console.log('set set status < to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
              
         }}
         doSomething();
-          
+        mainnft(); 
 
           
            
