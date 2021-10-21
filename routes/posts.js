@@ -54,10 +54,10 @@ const doSomethingMain = async () => {
 
        
         //code wrapped
-        
+        await sleep(10000);
         const posts = await Post.find({status: 0});
         //console.log('found in db:', posts);
-        
+        console.log('found al data base posts');
         // Mongo DB database values saved to string
         const testlink = posts[i].collection_link.toString();
         const link = "'" + testlink + "'"; // get link from user in database
@@ -66,26 +66,28 @@ const doSomethingMain = async () => {
         const alert = posts[i].alert_floorprice.toString();
         const id = posts[i]._id.toString();
         const cat = posts[i].alert_cat.toString();
-         
+        console.log('saved al database user posts i consts ');
         const sleep = (time) => {
             return new Promise((resolve) => setTimeout(resolve, time))
           } 
         
         //Scrape link from mongodb database to scrape floor price with cheerio
-        await sleep(10000);
+        
+        
         scraperapiClient.get(testlink) //enter link from user in database
         .then(response => {
         html = response;
         const $ = cheerio.load(html);
-        
+        console.log('scraped collection url of user');
         
         
         //Scrape name
         
         const productName = $('.Blockreact__Block-sc-1xf18x6-0');
            const outputName = productName.find('h2').text();
+           
+           console.log('scraped name output');
            console.log('Output', outputName);
-        
            
         const articles = []; //array with data html values
         $('h3').each((i, el) => {
@@ -93,13 +95,13 @@ const doSomethingMain = async () => {
         
         articles.push(title); // push title (extracted text value to array
         })  //h3 selector bracket close
-        
+        console.log('scraped weblink output');
         console.log('scraped:', articles[2]);
     
         
         //Put here
         const doSomething = async () => {
-           
+            console.log('started checking condition with db data and scraped data. both data should be available now');
              if (1 == 1) {
             
               console.log('check i status: ', i ,'countdb', countstatus, 'alertsetting',alert,'category ',cat , 'Website price', articles[2]);
