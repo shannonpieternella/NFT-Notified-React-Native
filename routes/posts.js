@@ -224,7 +224,7 @@ const doSomethingMain = async () => {
         if(i == countstatus-1){
             i=0;
             console.log('reset countt')
-
+            doSomethingMain();
 
         }else{
             i++;
