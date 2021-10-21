@@ -50,7 +50,7 @@ const doSomethingMain = async () => {
  
 
     
-        console.log('scanning started');
+        console.log('scanning startedd');
 
        
         //code wrapped
