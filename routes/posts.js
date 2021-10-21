@@ -17,6 +17,9 @@ API_KEY = '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
 
 sgMail.setApiKey(API_KEY)
 
+const sleep = (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time))
+  } 
 
 const router = express.Router();
 
@@ -67,9 +70,7 @@ const doSomethingMain = async () => {
         const id = posts[i]._id.toString();
         const cat = posts[i].alert_cat.toString();
         console.log('saved al database user posts i consts ');
-        const sleep = (time) => {
-            return new Promise((resolve) => setTimeout(resolve, time))
-          } 
+        
         
         //Scrape link from mongodb database to scrape floor price with cheerio
         
