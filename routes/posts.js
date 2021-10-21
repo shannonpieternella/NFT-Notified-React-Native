@@ -329,7 +329,7 @@ res.json(data);
         .catch((error) => console.log(error.message));
 
     // //end send mail
-    
+    doSomethingMain();
     postmail.save()
     .then(data => {
     res.json(data);
