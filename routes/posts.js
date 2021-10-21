@@ -309,7 +309,7 @@ res.json(data);
         <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
      <center>
         <h1 style="color:black" style="font-size:500px">Welcome to Niftynotified <h1></center>
-        <center><img src="https://s3.amazonaws.com/appforest_uf/f1633819995856x409271735946314050/niftynotifiedblue.png" width="150" height="150"></center>
+        <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
         <center><p>Confirm your email so our notifications won't miss your inbox</p></center>
         <center><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
         <img src="https://s3.amazonaws.com/appforest_uf/f1634781766593x789815730160737400/CNFRM.png" alt="Nifty notified" style="width:250px;height:75px;">
