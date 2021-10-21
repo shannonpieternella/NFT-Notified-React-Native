@@ -100,7 +100,7 @@ const doSomethingMain = async () => {
         console.log('scraped weblink output');
         console.log('scraped:', articles[2]);
     
-        doSomething();
+        
         //Put here
         const doSomething = async () => {
             console.log('started checking condition with db data and scraped data. both data should be available now');
@@ -210,7 +210,7 @@ const doSomethingMain = async () => {
             async function mainnft() {
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
-            
+            doSomething(); 
         }}
       
           
