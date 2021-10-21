@@ -17,9 +17,6 @@ API_KEY = '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
 
 sgMail.setApiKey(API_KEY)
 
-const sleep = (time) => {
-    return new Promise((resolve) => setTimeout(resolve, time))
-  }
 
 const router = express.Router();
 
@@ -40,13 +37,15 @@ res.json(posts);
 
 const doSomethingMain = async () => {
     
-    
+    let i=0;
     while (true) {
-        let i = 0;
+        
+        
+        console.log('loop nr', i);
     //count collection and use for loop.
     const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
-    // console.log('status count: ', countstatus);
+    console.log('status count: ', countstatus);
     //  console.log('status i: ', i);
  
 
@@ -57,7 +56,7 @@ const doSomethingMain = async () => {
         //code wrapped
         
         const posts = await Post.find({status: 0});
-        console.log('found in db:', posts);
+        //console.log('found in db:', posts);
         
         // Mongo DB database values saved to string
         const testlink = posts[i].collection_link.toString();
@@ -68,9 +67,12 @@ const doSomethingMain = async () => {
         const id = posts[i]._id.toString();
         const cat = posts[i].alert_cat.toString();
          
+        const sleep = (time) => {
+            return new Promise((resolve) => setTimeout(resolve, time))
+          } 
         
         //Scrape link from mongodb database to scrape floor price with cheerio
-        
+        await sleep(10000);
         scraperapiClient.get(testlink) //enter link from user in database
         .then(response => {
         html = response;
@@ -205,21 +207,31 @@ const doSomethingMain = async () => {
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
             
-           
+        }}
       
           doSomething();
-        }}
+
+          
+           
+        
+        
         }) //scraperapiClient.get(testlink).then
         
-        
-            
+        if(i == countstatus-1){
+            i=0;
+            console.log('reset count')
 
+
+        }else{
+            i++;
+            console.log('plus i++')
+
+        }
+           
         
         
         //end here
     
-        i++;
-            console.log('loop nr', i);
         
             }//end system
             
