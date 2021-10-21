@@ -154,7 +154,7 @@ const doSomethingMain = async () => {
                 .catch((error) => console.log(error.message));
         
             // //end send mail
-            
+            status = 1;
             mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
@@ -208,7 +208,7 @@ const doSomethingMain = async () => {
         
         //end send mail
         
-        
+            status = 1;
             mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
