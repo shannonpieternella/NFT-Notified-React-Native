@@ -107,7 +107,9 @@ const doSomethingMain = async () => {
              if (1 == 1) {
             
               console.log('check i status: ', i ,'countdb', countstatus, 'alertsetting',alert,'category ',cat , 'Website price', articles[2]);
+              console.log('time out 10sec plus status is -->', status);
               await sleep(10000);
+              
               //condition check if price is higher ten given price
         if (  alert < articles[2] && status == 0 && cat == ">" ){
             console.log('alert: ', articles[2], 'is more then ', alert);
@@ -158,6 +160,8 @@ const doSomethingMain = async () => {
             async function mainnft() {
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
+
+            console.log('time out 10sec plus status is -->', status);
             await sleep(10000);
             //condition check if price is lower ten given price
             if (  alert > articles[2] && status == 0 && cat == "<" ){
