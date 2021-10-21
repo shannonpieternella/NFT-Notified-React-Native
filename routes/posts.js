@@ -159,6 +159,7 @@ const doSomethingMain = async () => {
             mainnft(); //update status function 
             // set set status to 1
             async function mainnft() {
+                console.log('set set status to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
 
@@ -212,8 +213,9 @@ const doSomethingMain = async () => {
             status = 1;
             console.log('status reset ', status);
             mainnft(); //update status function 
-            // set set status to 1
+            
             async function mainnft() {
+                console.log('set set status to 1');
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             }}
              
