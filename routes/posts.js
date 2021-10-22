@@ -34,152 +34,91 @@ res.json(posts);
         }
 });
 
-//start system
 
 
 
-const doSomethingMain = async () => {
-    
-    try {
-        let i=0;
-    while (true) {
-        
-        
-        console.log('loop nr', i);
-    //count collection and use for loop.
-    const count = await Post.count();            
+async function main() {
+
+    const countStatusGlobal = await Post.count({status: 0});
+while (0 == 0) {
+const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
-    console.log('status count: ', countstatus);
-    //  console.log('status i: ', i);
+    let i = 0;
+//begin system
+
+console.log('loop i nr', i);
+            //count collection and use for loop.
+            try {
+                console.log('status db count: ', countstatus);  
+            console.log('scanning started');
+    
+            const posts = await Post.find({status: 0});       
+            
+            const testlink = await posts[i].collection_link.toString();
+            await console.log('1 testlink ', testlink);
+            const mail = await posts[i].email_id.toString();
+            await console.log('2 mail ', mail);
+            const status = await posts[i].status;
+            await console.log('3 status ', status);
+            const alert = await posts[i].alert_floorprice.toString();
+            await console.log('4 alert ', alert);
+            const id = await posts[i]._id.toString();
+            await console.log('5 posts', posts);
+            const cat = await posts[i].alert_cat.toString();
+            await console.log('6 cat', cat);
+    
+            await console.log('7 saved al database user posts');
+            
+
  
-
+            scraperapiClient.get(testlink) //enter link from user in database
+            .then(response => {
+            html = response;
+            const $ = cheerio.load(html);
+            console.log('0. scraped collection url of user');
     
-        console.log('scanning started');
-
-       
-        //code wrapped
-        await sleep(10000);
-        const posts = await Post.find({status: 0});
-        //console.log('found in db:', posts);
-        console.log('found al data base posts');
-        // Mongo DB database values saved to string
-        const testlink = posts[i].collection_link.toString();
-        const link = "'" + testlink + "'"; // get link from user in database
-        const mail = posts[i].email_id.toString();
-        const status = posts[i].status;
-        const alert = posts[i].alert_floorprice.toString();
-        const id = posts[i]._id.toString();
-        const cat = posts[i].alert_cat.toString();
-        console.log('saved al database user posts i consts ');
-        
-        
-        //Scrape link from mongodb database to scrape floor price with cheerio
-        
-        
-        scraperapiClient.get(testlink) //enter link from user in database
-        .then(response => {
-        html = response;
-        const $ = cheerio.load(html);
-        console.log('scraped collection url of user');
-        
-        
-        //Scrape name
-        
-        const productName = $('.Blockreact__Block-sc-1xf18x6-0');
-           const outputName = productName.find('h2').text();
-           
-           console.log('scraped name output');
-           console.log('Output', outputName);
-           
-        const articles = []; //array with data html values
-        $('h3').each((i, el) => {
-        const title = $(el).text(); //extract values as text from html
-        
-        articles.push(title); // push title (extracted text value to array
-        })  //h3 selector bracket close
-        console.log('scraped weblink output');
-        console.log('scraped:', articles[2]);
+            //Scrape name
+            
+            const productName = $('.Blockreact__Block-sc-1xf18x6-0');
+               const collectionName = productName.find('h2').text();
+               
+               console.log('1. scraped name output');
+               console.log('2. Output collection name', collectionName);
+               
+            const priceOpensea = []; //array with data html values
+            $('h3').each((i, el) => {
+            const title = $(el).text(); //extract values as text from html
+            
+            priceOpensea.push(title); // push title (extracted text value to array
+            })  //h3 selector bracket close
+            console.log('3. scraped opensea output');
+            console.log('4. scraped price:', priceOpensea[2]);
     
-        
-        //Put here
-        const doSomething = async () => {
-            console.log('started checking condition with db data and scraped data. both data should be available now');
-             if (1 == 1) {
-            
-              console.log('check i status: ', i ,'countdb', countstatus, 'alertsetting',alert,'category ',cat , 'Website price', articles[2]);
-              console.log('time out 10sec plus status is -->', status);
-              await sleep(10000);
-              
-              //condition check if price is higher ten given price
-        if (  alert < articles[2] && status == 0 && cat == ">" ){
-            console.log('alert: ', articles[2], 'is more then ', alert);
-            console.log('send email to ', mail);
-            console.log('NFT ', testlink);
-        
-            const obj = {
-                weblink: testlink,
-                alertprice: alert,
-                webprice: articles[2],
-                nftname: outputName
-                }
-            //send mail
-            const message = {
-                to: mail,
-                from: {
-                    name: 'NiftyNotified',
-                    email: 'team@niftynotified.com',
-                
-                },
-                subject: `Price alert for ${obj.nftname}`,
-                text:`The floor price went higher then ${obj.webprice}`,
-                html:`
-                <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
-             <center>
-                <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
-                <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
-                <center><p>NFT Floorprice just went higher then ${obj.alertprice}</p></center>
-                <center><a href="${obj.weblink}">
-                <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:250px;height:75px;">
-              </a></center>
-              <center><p>You can check out the official collection </p><a href = "${obj.weblink}">here</a></center>
-              <center>
-              <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
-          </center>`
-            
-            };
-                
-                sgMail
-                .send(message)
-                .then((respose) => console.log('Email sent...'))
-                .catch((error) => console.log(error.message));
-        
-            // //end send mail
-            
-            // mainnft(); //update status function 
-            // set set status to 1
-            
-            //     console.log('set set status > to 1');
-            // const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
-            }// einde if statement
-             
+//-------------------------------------------------------------------------------------------------------------
 
-            console.log('time out 10sec plus status is -->', status);
-            await sleep(10000);
-            //condition check if price is lower ten given price
-            if (  alert > articles[2] && status == 0 && cat == "<" ){
-            console.log('alert: ', articles[2], 'is lower then ', alert);
-            console.log('send email to ', mail);
-            console.log('NFT ', testlink);
-            
-        //send mail save obj
+            const doSomething = async () => {
+                
+    await console.log('5. collection name',collectionName);
+    await console.log('6. Price open sea',priceOpensea[2]);
+    await console.log('7 while loop count: ', i );
+    
+    // await console.log('8. While loop nr: ', i ,'countdb', countstatus, 'alertprice',alert,'status post ',status , 'Website price', priceOpensea[2],'category ',cat);
+       //condition check if price is higher ten given price
+     await console.log('9. Openseaprice: ', priceOpensea[2], 'higher then', alert,'status post ',status ,'category ',cat && mail != "reset");
+       if ( priceOpensea[2] > alert  && status == 0 && cat == ">" && mail != "reset"){
+        
+        console.log('10. send email to ', mail);
+        console.log('111. NFT ', testlink);
+        
+    
         const obj = {
-        weblink: testlink,
-        alertprice: alert,
-        webprice: articles[2],
-        nftname: outputName
-        } //end obj
-        
-        //begin message
+            weblink: testlink,
+            alertprice: alert,
+            webprice: priceOpensea[2],
+            nftname: collectionName
+            }
+    
+        //send mail
         const message = {
             to: mail,
             from: {
@@ -188,186 +127,193 @@ const doSomethingMain = async () => {
             
             },
             subject: `Price alert for ${obj.nftname}`,
-                text:`The floor price went lower then ${obj.webprice}`,
+            text:`The floor price went higher then ${obj.webprice}`,
             html:`
             <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
-            <center>
+         <center>
             <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
             <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
-            <center><p>NFT Floorprice just went lower then ${obj.alertprice}</p></center>
+            <center><p>NFT Floorprice just went higher then ${obj.alertprice}</p></center>
             <center><a href="${obj.weblink}">
-            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="niftynotified" style="width:250px;height:75px;">
+            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:250px;height:75px;">
           </a></center>
           <center><p>You can check out the official collection </p><a href = "${obj.weblink}">here</a></center>
           <center>
-              <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
-          </center>`
-            }; //end message
-            
+          <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
+      </center>`
+            };
+    
+            console.log('Send mail');
             sgMail
             .send(message)
             .then((respose) => console.log('Email sent...'))
             .catch((error) => console.log(error.message));
+
+            const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
+            console.log('database status set to 1', "loop nummer: ", i);
+            
+    }//end if statement
         
-        //end send mail
+    // await console.log('8 tweede. While loop nr: ', i ,'countdb', countstatus, 'alertprice',alert,'status post ',status , 'Website price', priceOpensea[2],'category ',cat);
+    await console.log('9. openseaprice: ', priceOpensea[2], 'is lower then ', alert,'status post ',status ,'category ',cat);
+   
+    if ( priceOpensea[2] < alert && status == 0 && cat == "<" && mail != "reset" ){
+       
+        console.log('10. send email to ', mail);
+        console.log('11. NFT ', testlink);
         
-        
-            //update status function 
+    
+        const obj = {
+            weblink: testlink,
+            alertprice: alert,
+            webprice: priceOpensea[2],
+            nftname: collectionName
+            }
+    
+        //send mail
+        const message = {
+            to: mail,
+            from: {
+                name: 'NiftyNotified',
+                email: 'team@niftynotified.com',
+            
+            },
+            subject: `Price alert for ${obj.nftname}`,
+            text:`The floor price went lower then ${obj.webprice}`,
+            html:`
+            <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
+         <center>
+            <h1 style="color:black" style="font-size:500px">Floor price of ${obj.nftname} is ${obj.webprice}! <h1></center>
+            <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
+            <center><p>NFT Floorprice just went lower then ${obj.alertprice}</p></center>
+            <center><a href="${obj.weblink}">
+            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:250px;height:75px;">
+          </a></center>
+          <center><p>You can check out the official collection </p><a href = "${obj.weblink}">here</a></center>
+          <center>
+          <p>Found what you're looking for? If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
+      </center>`
+            };
+    
+            console.log('Send mail 2');
+            sgMail
+            .send(message)
+            .then((respose) => console.log('Email sent...'))
+            .catch((error) => console.log(error.message));
+    
+            const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
+            console.log('database status set to 1', "loop nummer: ", i);
             
             
-            //     console.log('set set status < to 1');
-            // const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
-            }//einde if statement
+    //end send mail
+    //update status function 
+        
+        
+        
+        }//einde if statement
+    
+    
+        console.log('Loop nummer ', i);
+    
+    
+               
+            }
+            doSomething();
+            
+           
              
-        }}
-        doSomething();
-        
-
-          
-           
-        
-        
-        }) //scraperapiClient.get(testlink).then
-        
-        if(i == countstatus){
-            i=0;
-            console.log('reset countt')
-
-
-        }else{
-            i++;
-            console.log('plus i++')
-
-        }
-           
-        
-        
-        //end here
-    
-        
-            }//end system
-            
-      }
-      catch (exception_var) {
-        console.log('error catch');
-      } // end catch
-    
-
-
-      }//end while loop
-    
-    
-      
-    doSomethingMain();
-
-
-
-  
-
-//Get back all the post
-router.get('/contracts', async (req, res) => {
-    try {
-const posts = await contracts.find();;
-res.json(posts);
-    } catch (err) {
-        res.json({ message: err });
-        }
-});
-
-//refresh db
-router.get('/restart', async (req, res) => {
-    try {
-        doSomethingMain();
-        res.json('restarted now');
-    } catch (err) {
-        res.json({ message: err });
-        }
-});
-
-
-
-    //Submits a post
-
-router.post('/', (req,res) => {
-const post = new Post({
-email_id: req.body.email_id,
-// user_id: req.body.discord_id,
-collection_link: req.body.collection_link,
-alert_floorprice: req.body.alert_floorprice,
-// alert_type: req.body.alert_type,
-alert_cat: req.body.alert_cat,
-status: req.body.status
-
-
-});
-
-post.save()
-.then(data => {
-res.json(data);
-
-})
-.catch(err => { 
-    res.json({ message: err });
-    });
-
-});
-
-  //Send mail
-
-  router.post('/mail', (req,res) => {
-    const postmail = new email({
-    email_id: req.body.email_id,
-    date: req.body.date
-    
-    });
-
-    //send mail
+    }) //scraperapiClient.get(testlink).then
+} catch (error) {
+                
+    console.log(error);
+    console.log('error catched restart now');
+    i = 0;
+    }
 
     
-    const message = {
-        to: `${postmail.email_id}`,
-        from: {
-            name: 'NiftyNotified',
-            email: 'team@niftynotified.com',
-        
-        },
-        subject: `Confirm Email`,
-        text:`Confirm email`,
-        html:`
-        <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
-     <center>
-        <h1 style="color:black" style="font-size:500px">Welcome to Niftynotified <h1></center>
-        <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
-        <center><p>Confirm your email so our notifications won't miss your inbox</p></center>
-        <center><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
-        <img src="https://s3.amazonaws.com/appforest_uf/f1634781766593x789815730160737400/CNFRM.png" alt="Nifty notified" style="width:250px;height:75px;">
-      </a></center>
-      <center>
-      <p>If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
-  </center>`
-    
-    };
-        
-        sgMail
-        .send(message)
-        .then((respose) => console.log('Email sent to...', `${postmail.email_id}`))
-        .catch((error) => console.log(error.message));
+//end system
 
-    // //end send mail
-    doSomethingMain();
-    postmail.save()
-    .then(data => {
-    res.json(data);
+// if condition is true 
+console.log('Loop official counter number: ', i);
+i += 1;
+await sleep2(30000);
+}
+// if condition is false
+i=0;
+console.log('reset', 'mail status');
+// await sleep2(1000);
+// main();
+console.log('restarted after 20 sec');
+}
+
+
+
+function sleep2(ms) {
+return new Promise((accept) => {
+setTimeout(() => {
+    accept();
+}, ms);
+
+
+}) //function accept()
+
+
+
+} //function main
+
+
+main();
+
+
+
+//loop to check status server and restart loop if crashed
+// async function mainrestart() {
+
     
-    })
-    .catch(err => { 
-        res.json({ message: err });
-        });
+//     let count = 0;
+// while (count < 20) {
     
-    });
-    
+// console.log(count,'testlink: '. testlink);
+// count += 1;
+// await sleeprestart(1000);
+// }
+// i=0;
+// console.log('reset');
+// main();
+// }
+
+// mainrestart();
+
+// function sleeprestart(ms) {
+// return new Promise((accept) => {
+// setTimeout(() => {
+//     accept();
+// }, ms);
+
+
+// }) //function accept()
+
+
+
+// } //function main
+
+
+//end loop restart bracket
+
 
 //save asset
+
+
+
+//Get back all the post
+router.get('/resetnow', async (req, res) => {
+    try {
+main();
+res.json('gelukt');
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
 
 router.post('/assetnew', (req,res) => {
     const post = new Asset({
@@ -379,7 +325,6 @@ router.post('/assetnew', (req,res) => {
     // alert_type: req.body.alert_type,
     alert_cat: req.body.alert_cat,
     status: req.body.status
-    
     
     });
     
