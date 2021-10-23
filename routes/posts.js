@@ -704,17 +704,21 @@ console.log('loop start nr', i);
                 
     console.log(error);
     console.log('error catched restart now');
-    i = 0;
+    
     }
 
     
 //end system
-
+console.log('check if statement for loop continuation');
 // if condition is true 
-if(i != 0){
-
+if(i == countstatus){
+    i = 0;
+    console.log('reset start from zero i == db count');
+    
+} else{
     i += 1;
-    console.log('plus 1 loop restarted');
+    console.log('plus 1 loop restart, i != db count ');
+
 }
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
