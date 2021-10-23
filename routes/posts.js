@@ -708,7 +708,7 @@ console.log('Loop official counter number: ', i);
 await sleep2(5000);
 }
 // if condition is false
-i=0;
+// i=0;
 console.log('reset', 'mail status');
 // await sleep2(1000);
 // main();
