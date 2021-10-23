@@ -703,7 +703,7 @@ console.log('loop start nr', i);
 
 // if condition is true 
 i += 1;
-console.log('Loop official counter number: ', i);
+console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
 await sleep2(5000);
 }
