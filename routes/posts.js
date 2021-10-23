@@ -702,8 +702,9 @@ console.log('loop i nr', i);
 //end system
 
 // if condition is true 
-console.log('Loop official counter number: ', i);
 i += 1;
+console.log('Loop official counter number: ', i);
+
 await sleep2(30000);
 }
 // if condition is false
