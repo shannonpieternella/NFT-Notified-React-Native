@@ -35,6 +35,16 @@ res.json(posts);
 });
 
 
+//Get back all the post
+router.get('/delete', async (req, res) => {
+    try {
+const posts = await Post.deleteMany({status:1});;
+res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
 
 
 async function main() {
@@ -128,7 +138,7 @@ console.log('loop i nr', i);
             },
             subject: `Price alert for ${obj.nftname}`,
             text:`The floor price went higher then ${obj.webprice}`,
-            html:`<html xmlns="http://www.w3.org/1999/xhtml">
+            html:`<html>
             <head>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0;">
@@ -313,7 +323,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 1 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://discord.gg/SUpaEYwHa4"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="F" title="Facebook"
@@ -409,7 +419,7 @@ console.log('loop i nr', i);
             },
             subject: `Price alert for ${obj.nftname}`,
             text:`The floor price went lower then ${obj.webprice}`,
-            html:`<html xmlns="http://www.w3.org/1999/xhtml">
+            html:`<html>
             <head>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0;">
@@ -594,7 +604,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 1 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://discord.gg/SUpaEYwHa4"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="F" title="Facebook"
@@ -807,7 +817,7 @@ main();
             },
             subject: `Confirm Email`,
             text:`Confirm email`,
-            html:`<html xmlns="http://www.w3.org/1999/xhtml">
+            html:`<html>
             <head>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0;">
@@ -992,7 +1002,7 @@ main();
             
                             <!-- ICON 1 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://www.google.nl/"
+                                href="https://discord.gg/SUpaEYwHa4"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="F" title="Facebook"
@@ -1122,7 +1132,7 @@ res.json({ message: err});
 // Delete Post
 router.delete('/:postId', async (req,res) => {
     try{
-const removedPost = await Post.remove({_id: req.params.postId});
+const removedPost = await Post.removea({_id: req.params.postId});
 res.json(removedPost);
 }catch (err) {
     res.json({ message: err});
