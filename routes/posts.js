@@ -56,7 +56,7 @@ const count = await Post.count();
     let i = 0;
 //begin system
 
-console.log('loop i nr', i);
+console.log('loop start nr', i);
             //count collection and use for loop.
             try {
                 console.log('status db count: ', countstatus);  
@@ -702,7 +702,7 @@ console.log('loop i nr', i);
 //end system
 
 // if condition is true 
-i += 1;
+i ++;
 console.log('Loop official counter number: ', i);
 
 await sleep2(30000);
