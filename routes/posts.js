@@ -951,7 +951,7 @@ main();
                                 bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
                                 color: #FFFFFF; font-family: fantasy; font-size: 30px; font-weight: 400; line-height: 120%;"
                                 href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
-                                    CONFRIM EMAIL
+                                    CONFIRM EMAIL
                                 </a>
                         </td></tr></table></a>
                     </td>
