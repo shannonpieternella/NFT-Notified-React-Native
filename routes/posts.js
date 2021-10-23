@@ -391,6 +391,10 @@ console.log('loop start nr', i);
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             console.log('database status set to 1', "loop nummer: ", i);
             
+     }else{
+        i += 1;
+        console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
+
     }//end if statement
         
     // await console.log('8 tweede. While loop nr: ', i ,'countdb', countstatus, 'alertprice',alert,'status post ',status , 'Website price', priceOpensea[2],'category ',cat);
@@ -678,6 +682,10 @@ console.log('loop start nr', i);
         
         
         
+        }else{
+            i += 1;
+            console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
+
         }//einde if statement
     
     
@@ -702,8 +710,8 @@ console.log('loop start nr', i);
 //end system
 
 // if condition is true 
-i += 1;
-console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
+// i += 1;
+// console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
 await sleep2(5000);
 }
