@@ -236,7 +236,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 35px; font-weight:normal; line-height: 130%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="header">
+                        font-family: Tahoma;" class="header">
                             Floor price of ${obj.nftname} is ${obj.webprice}! 
                     </td>
                 </tr>
@@ -247,7 +247,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-bottom: 3px; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 18px; font-weight: 300; line-height: 150%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="subheader">
+                        font-family: Tahoma;" class="subheader">
                             
                     </td>
                 </tr>
@@ -266,7 +266,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 17px; font-weight: 300; line-height: 160%;
                         padding-top: 0px; 
                         color: #000000;
-                        font-family: fantasy;" class="paragraph">
+                        font-family: Tahoma;" class="paragraph">
                             NFT Floorprice just went higher then ${obj.alertprice}
                     </td>
                 </tr>
@@ -280,7 +280,7 @@ console.log('loop i nr', i);
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                             <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
                                 bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: fantasy; font-size: 30px; font-weight: 400; line-height: 120%;"
+                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
                                 href="${obj.weblink}">
                                     VIEW COLLECTION
                                 </a>
@@ -332,7 +332,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 2 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://t.me/niftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="T" title="Twitter"
@@ -341,7 +341,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 3 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://mobile.twitter.com/goniftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="G" title="Google Plus"
@@ -517,7 +517,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 35px; font-weight:normal; line-height: 130%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="header">
+                        font-family: Tahoma;" class="header">
                             Floor price of ${obj.nftname} is ${obj.webprice}! 
                     </td>
                 </tr>
@@ -528,7 +528,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-bottom: 3px; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 18px; font-weight: 300; line-height: 150%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="subheader">
+                        font-family: Tahoma;" class="subheader">
                             
                     </td>
                 </tr>
@@ -547,7 +547,7 @@ console.log('loop i nr', i);
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 17px; font-weight: 300; line-height: 160%;
                         padding-top: 0px; 
                         color: #000000;
-                        font-family: fantasy;" class="paragraph">
+                        font-family: Tahoma;" class="paragraph">
                             NFT Floorprice just went lower then ${obj.alertprice}
                     </td>
                 </tr>
@@ -561,7 +561,7 @@ console.log('loop i nr', i);
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                             <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
                                 bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: fantasy; font-size: 30px; font-weight: 400; line-height: 120%;"
+                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
                                 href="${obj.weblink}">
                                     VIEW COLLECTION
                                 </a>
@@ -613,7 +613,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 2 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://t.me/niftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="T" title="Twitter"
@@ -622,7 +622,7 @@ console.log('loop i nr', i);
             
                             <!-- ICON 3 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://google.nl"
+                                href="https://mobile.twitter.com/goniftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="G" title="Google Plus"
@@ -915,7 +915,7 @@ main();
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 35px; font-weight:normal; line-height: 130%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="header">
+                        font-family: Tahoma;" class="header">
                             Welcome to Niftynotified
                     </td>
                 </tr>
@@ -926,7 +926,7 @@ main();
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-bottom: 3px; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 18px; font-weight: 300; line-height: 150%;
                         padding-top: 0px;
                         color: #000000;
-                        font-family: fantasy;" class="subheader">
+                        font-family: Tahoma;" class="subheader">
                             
                     </td>
                 </tr>
@@ -945,7 +945,7 @@ main();
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 17px; font-weight: 300; line-height: 160%;
                         padding-top: 0px; 
                         color: #000000;
-                        font-family: fantasy;" class="paragraph">
+                        font-family: Tahoma;" class="paragraph">
                             Confirm your email so our notifications won't miss your inbox
                     </td>
                 </tr>
@@ -959,7 +959,7 @@ main();
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                             <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
                                 bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: fantasy; font-size: 30px; font-weight: 400; line-height: 120%;"
+                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
                                 href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
                                     CONFIRM EMAIL
                                 </a>
@@ -1011,7 +1011,7 @@ main();
             
                             <!-- ICON 2 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://www.google.nl/"
+                                href="https://t.me/niftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="T" title="Twitter"
@@ -1020,7 +1020,7 @@ main();
             
                             <!-- ICON 3 -->
                             <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
-                                href="https://www.google.nl/"
+                                href="https://mobile.twitter.com/goniftynotified"
                             style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
                                 color: #000000;"
                                 alt="G" title="Google Plus"
