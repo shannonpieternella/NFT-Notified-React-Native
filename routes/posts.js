@@ -702,7 +702,7 @@ console.log('loop start nr', i);
 //end system
 
 // if condition is true 
-i ++;
+i += 1;
 console.log('Loop official counter number: ', i);
 
 await sleep2(5000);
