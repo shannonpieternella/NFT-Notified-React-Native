@@ -302,7 +302,85 @@ main();
 
 
 //save asset
+ //Submits a post
 
+ router.post('/', (req,res) => {
+    const post = new Post({
+    email_id: req.body.email_id,
+    // user_id: req.body.discord_id,
+    collection_link: req.body.collection_link,
+    alert_floorprice: req.body.alert_floorprice,
+    // alert_type: req.body.alert_type,
+    alert_cat: req.body.alert_cat,
+    status: req.body.status
+    
+    
+    });
+    
+    post.save()
+    .then(data => {
+    res.json(data);
+    
+    })
+    .catch(err => { 
+        res.json({ message: err });
+        });
+    
+    });
+    
+      //Send mail
+    
+      router.post('/mail', (req,res) => {
+        const postmail = new email({
+        email_id: req.body.email_id,
+        date: req.body.date
+        
+        });
+    
+        //send mail
+    
+        
+        const message = {
+            to: `${postmail.email_id}`,
+            from: {
+                name: 'NiftyNotified',
+                email: 'team@niftynotified.com',
+            
+            },
+            subject: `Confirm Email`,
+            text:`Confirm email`,
+            html:`
+            <img src="https://s3.amazonaws.com/appforest_uf/f1634648651914x172105244387360060/unnamed%20%287%29.png" alt="Niftynotified" style="width:800px;height:100px;">
+         <center>
+            <h1 style="color:black" style="font-size:500px">Welcome to Niftynotified <h1></center>
+            <center><img src="https://s3.amazonaws.com/appforest_uf/f1634783948394x772698948587878400/NNlogoblack.png" width="100" height="100"></center>
+            <center><p>Confirm your email so our notifications won't miss your inbox</p></center>
+            <center><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
+            <img src="https://s3.amazonaws.com/appforest_uf/f1634781766593x789815730160737400/CNFRM.png" alt="Nifty notified" style="width:250px;height:75px;">
+          </a></center>
+          <center>
+          <p>If you no longer wish to receive this type of email from Nifty Notified you can <a href="https://niftynotified.com/unsubscribe_email">unsubscribe</a> here.</p>
+      </center>`
+        
+        };
+            
+            sgMail
+            .send(message)
+            .then((respose) => console.log('Email sent to...', `${postmail.email_id}`))
+            .catch((error) => console.log(error.message));
+    
+        // //end send mail
+        
+        postmail.save()
+        .then(data => {
+        res.json(data);
+        
+        })
+        .catch(err => { 
+            res.json({ message: err });
+            });
+        
+        });
 
 
 //Get back all the post
