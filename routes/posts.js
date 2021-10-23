@@ -50,7 +50,7 @@ res.json(posts);
 async function main() {
 
     const countStatusGlobal = await Post.count({status: 0});
-    let i = 0;
+    let i = 1;
 while (0 == 0) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
@@ -704,7 +704,7 @@ console.log('loop start nr', i);
                 
     console.log(error);
     console.log('error catched restart now');
-    i = 0;
+    i = 1;
     }
 
     
