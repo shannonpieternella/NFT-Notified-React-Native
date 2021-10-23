@@ -711,7 +711,12 @@ console.log('loop start nr', i);
 //end system
 
 // if condition is true 
-i += 1;
+if(i != 0){
+
+    i += 1;
+    console.log('plus 1 loop restarted');
+}
+
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
 await sleep2(5000);
