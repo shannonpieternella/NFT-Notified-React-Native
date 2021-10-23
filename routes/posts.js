@@ -704,7 +704,7 @@ console.log('loop start nr', i);
                 
     console.log(error);
     console.log('error catched restart now');
-    i = 1;
+    i = 0;
     }
 
     
