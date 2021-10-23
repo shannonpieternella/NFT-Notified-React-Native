@@ -50,10 +50,11 @@ res.json(posts);
 async function main() {
 
     const countStatusGlobal = await Post.count({status: 0});
+    let i = 0;
 while (0 == 0) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
-    let i = 0;
+    
 //begin system
 
 console.log('loop start nr', i);
@@ -710,13 +711,13 @@ console.log('loop start nr', i);
 //end system
 
 // if condition is true 
-// i += 1;
+i += 1;
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
 await sleep2(5000);
 }
 // if condition is false
-// i=0;
+i=0;
 console.log('reset', 'mail status');
 // await sleep2(1000);
 // main();
