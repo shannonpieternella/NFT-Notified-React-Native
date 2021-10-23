@@ -705,7 +705,7 @@ console.log('loop start nr', i);
 i ++;
 console.log('Loop official counter number: ', i);
 
-await sleep2(30000);
+await sleep2(5000);
 }
 // if condition is false
 i=0;
