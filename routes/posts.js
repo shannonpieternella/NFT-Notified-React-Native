@@ -50,9 +50,9 @@ res.json(posts);
 async function main() {
 
     const countStatusGlobal = await Post.count({status: 0});
-    let i = 0;
+    let i = -1;
     
-while (countStatusGlobal+1 > i) {
+while (countStatusGlobal > i) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
     i += 1;
@@ -701,7 +701,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
                 
     console.log(error);
     console.log('error catched restart now');
-    console.log('check if statement for loop continuation');
+    // console.log('check if statement for loop continuation');
 // // if condition is true 
 // if(i => countstatus){
 //     i = 0;
