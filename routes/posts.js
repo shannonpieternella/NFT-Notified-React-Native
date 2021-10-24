@@ -706,17 +706,17 @@ console.log('loop start nr', i, 'status db count:', countstatus);
     console.log(error);
     console.log('error catched restart now');
     console.log('check if statement for loop continuation');
-// if condition is true 
-if(i => countstatus){
-    i = 0;
-    console.log('reset start from zero i == db count');
+// // if condition is true 
+// if(i => countstatus){
+//     i = 0;
+//     console.log('reset start from zero i == db count');
  
     
-} else{
-    i += 1;
-    console.log('plus 1 loop restart, i != db count ');
+// } else{
+//     i += 1;
+//     console.log('plus 1 loop restart, i != db count ');
 
-}
+// }
     }
 
     
@@ -731,7 +731,7 @@ await sleep2(5000);
 i=0;
 console.log('reset', 'mail status');
 // await sleep2(1000);
-// main();
+ main();
 console.log('restarted after 20 sec');
 }
 
