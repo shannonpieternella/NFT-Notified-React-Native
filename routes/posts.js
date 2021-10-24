@@ -710,7 +710,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 if(i => countstatus){
     i = 0;
     console.log('reset start from zero i == db count');
-    main(0);
+ 
     
 } else{
     i += 1;
