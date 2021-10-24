@@ -47,10 +47,10 @@ res.json(posts);
 
 
 
-async function main(nr) {
+async function main() {
 
     const countStatusGlobal = await Post.count({status: 0});
-    let i = nr;
+    let i = 0;
     console.log('The great reset is: ', nr)
 while (0 == 0) {
 const count = await Post.count();            
