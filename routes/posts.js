@@ -729,13 +729,14 @@ await sleep2(5000);
 }
 // if condition is false
 i=0;
+main();
 console.log('reset', 'mail status');
 
- await sleep2(10000);
- console.log('loop start nr', i, 'status db count:', countstatus);
- await sleep2(10000);
-console.log('restarted now after 20 sec' );
-main();
+//  await sleep2(10000);
+//  console.log('loop start nr', i, 'status db count:', countstatus);
+//  await sleep2(10000);
+// console.log('restarted now after 20 sec' );
+
 }
 
 
