@@ -976,7 +976,7 @@ main();
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                         <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
                         bgcolor="#FFFFFF"><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
-                            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
+                            <img src="https://s3.amazonaws.com/appforest_uf/f1634781766593x789815730160737400/CNFRM.png" alt="Nifty notified" style="width:350px;height:100px;">
                           </a>
                         </td></tr></table></a>
                     </td>
