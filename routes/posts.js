@@ -55,7 +55,7 @@ async function main() {
 while (countStatusGlobal > i) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
-    
+    i += 1;
 //begin system
 
 console.log('loop start nr', i, 'status db count:', countstatus);  
@@ -393,9 +393,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
             const updatedPost = await Post.findByIdAndUpdate({_id: id}, { $set: { status: 1 }});
             console.log('database status set to 1', "loop nummer: ", i);
             
-     }else{
-        i += 1;
-        console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
+          
 
     }//end if statement
         
@@ -684,9 +682,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
         
         
         
-        }else{
-            i += 1;
-            console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
+    
 
         }//einde if statement
     
