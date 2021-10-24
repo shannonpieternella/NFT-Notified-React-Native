@@ -704,12 +704,7 @@ console.log('loop start nr', i);
                 
     console.log(error);
     console.log('error catched restart now');
-    
-    }
-
-    
-//end system
-console.log('check if statement for loop continuation');
+    console.log('check if statement for loop continuation');
 // if condition is true 
 if(i => countstatus){
     i = 0;
@@ -720,6 +715,11 @@ if(i => countstatus){
     console.log('plus 1 loop restart, i != db count ');
 
 }
+    }
+
+    
+//end system
+
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
