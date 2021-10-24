@@ -711,7 +711,7 @@ console.log('loop start nr', i);
 //end system
 console.log('check if statement for loop continuation');
 // if condition is true 
-if(i == countstatus){
+if(i => countstatus){
     i = 0;
     console.log('reset start from zero i == db count');
     
