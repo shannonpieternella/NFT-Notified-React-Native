@@ -273,19 +273,17 @@ console.log('loop start nr', i, 'status db count:', countstatus);
                     </td>
                 </tr>
             
-                <!-- BUTTON -->
+                <!-- BUTTON 1-->
                 <!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
                 <tr>
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
                         padding-top: 25px;
                         padding-bottom: 5px;" class="button"><a
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
-                                bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
-                                href="${obj.weblink}">
-                                    VIEW COLLECTION
-                                </a>
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
+                        bgcolor="#FFFFFF"><a href="${obj.weblink}">
+                            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
+                          </a>
                         </td></tr></table></a>
                     </td>
                 </tr>
@@ -556,19 +554,17 @@ console.log('loop start nr', i, 'status db count:', countstatus);
                     </td>
                 </tr>
             
-                <!-- BUTTON -->
+                <!-- BUTTON 2-->
                 <!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
                 <tr>
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
                         padding-top: 25px;
                         padding-bottom: 5px;" class="button"><a
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
-                                bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
-                                href="${obj.weblink}">
-                                    VIEW COLLECTION
-                                </a>
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
+                        bgcolor="#FFFFFF"><a href="${obj.weblink}">
+                            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
+                          </a>
                         </td></tr></table></a>
                     </td>
                 </tr>
@@ -971,19 +967,17 @@ main();
                     </td>
                 </tr>
             
-                <!-- BUTTON -->
+                <!-- BUTTON 3-->
                 <!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
                 <tr>
                     <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
                         padding-top: 25px;
                         padding-bottom: 5px;" class="button"><a
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
-                            <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
-                                bgcolor="#03B4C6"><a target="_blank" style="text-decoration: underline;
-                                color: #FFFFFF; font-family: Tahoma; font-size: 30px; font-weight: 400; line-height: 120%;"
-                                href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
-                                    CONFIRM EMAIL
-                                </a>
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
+                        bgcolor="#FFFFFF"><a href="https://niftynotified.com/email_confirmed/${postmail.email_id}">
+                            <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
+                          </a>
                         </td></tr></table></a>
                     </td>
                 </tr>
