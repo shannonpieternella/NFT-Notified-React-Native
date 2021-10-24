@@ -47,10 +47,11 @@ res.json(posts);
 
 
 
-async function main() {
+async function main(nr) {
 
     const countStatusGlobal = await Post.count({status: 0});
-    let i = 0;
+    let i = nr;
+    console.log('The great reset is: ', nr)
 while (0 == 0) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
@@ -709,6 +710,7 @@ console.log('loop start nr', i);
 if(i => countstatus){
     i = 0;
     console.log('reset start from zero i == db count');
+    main(0);
     
 } else{
     i += 1;
