@@ -52,7 +52,7 @@ async function main() {
     const countStatusGlobal = await Post.count({status: 0});
     let i = 0;
     
-while (countStatusGlobal > i) {
+while (countStatusGlobal+1 > i) {
 const count = await Post.count();            
     const countstatus = await Post.count({status: 0});
     i += 1;
