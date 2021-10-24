@@ -58,10 +58,10 @@ const count = await Post.count();
     
 //begin system
 
-console.log('loop start nr', i);
+console.log('loop start nr', i, 'status db count:', countstatus);  
             //count collection and use for loop.
             try {
-                console.log('status db count: ', countstatus);  
+                
             console.log('scanning started');
     
             const posts = await Post.find({status: 0});       
