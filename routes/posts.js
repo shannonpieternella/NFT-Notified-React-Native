@@ -281,7 +281,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
                         padding-bottom: 5px;" class="button"><a
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                         <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
-                        bgcolor="#FFFFFF"><a href="${obj.weblink}">
+                        bgcolor="#FFFFFF"><a href="${obj.weblink}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW">
                             <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
                           </a>
                         </td></tr></table></a>
@@ -562,7 +562,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
                         padding-bottom: 5px;" class="button"><a
                         href="https://github.com/konsav/email-templates/" target="_blank" style="">
                         <table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 500px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 40px; -webkit-border-radius: 40px; -moz-border-radius: 40px; -khtml-border-radius: 40px;"
-                        bgcolor="#FFFFFF"><a href="${obj.weblink}">
+                        bgcolor="#FFFFFF"><a href="${obj.weblink}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW">
                             <img src="https://s3.amazonaws.com/appforest_uf/f1634648463681x225548769958791260/Schermafbeelding%202021-10-19%20om%2014.51.48.png" alt="Nifty notified" style="width:350px;height:100px;">
                           </a>
                         </td></tr></table></a>
