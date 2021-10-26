@@ -720,7 +720,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 // await sleep2(5000);
 }
 // if condition is false
-i=0;
+i=-1;
 main();
 console.log('reset', 'mail status');
 
