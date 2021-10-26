@@ -717,7 +717,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
-await sleep2(5000);
+// await sleep2(5000);
 }
 // if condition is false
 i=0;
@@ -1419,7 +1419,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
-await sleep2(5000);
+// await sleep2(5000);
 }
 // if condition is false
 i=14;
@@ -2123,7 +2123,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
-await sleep2(5000);
+// await sleep2(5000);
 }
 // if condition is false
 i=29;
@@ -2827,7 +2827,7 @@ console.log('loop start nr', i, 'status db count:', countstatus);
 
 // console.log('Loop official counter number: ', i, 'status 0 posts : ', countstatus);
 
-await sleep2(5000);
+// await sleep2(5000);
 }
 // if condition is false
 i=44;
