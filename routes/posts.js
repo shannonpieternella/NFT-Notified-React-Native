@@ -6374,7 +6374,7 @@ mainNine();
 async function mainEnd() {
 
     const countStatusGlobal = await Post.count({status: 0});
-    let i = countStatusGlobal-3;
+    let i = countStatusGlobal-1;
     
 while (i < countStatusGlobal) {
 const count = await Post.count();            
