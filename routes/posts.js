@@ -835,27 +835,9 @@ router.post('/collectionsnow', (req,res) => {
         res.json({ message: err });
         });
 
-        //Scrape function
-
-scraperapiClient.get(post.collection_link)
-.then(response => {
- //console.log(response)
- html = response
- 
- //console.log(html)
- const $ = cheerio.load(html)
-
-//  //scrape price
-   const productPrice = $('.Overflowreact__OverflowContainer-sc-10mm0lu-0');
-    const outputPrice = productPrice.eq(2).text();
-    console.log('Output1st', outputPrice);
+      
 
 
-  
-
- })
-
-//end scrapefunction
  //check if nft is in database
     const savedb = await collections.count({collection_link:post.collection_link})
      if(savedb == 0){
