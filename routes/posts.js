@@ -150,6 +150,7 @@ while (i < countCollectionsOfficialDb) {
 
     try {
         
+await sleep2(10000);
     
 
     //Krijg alle collections url updates prices in db
