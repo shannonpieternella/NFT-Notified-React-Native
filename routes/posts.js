@@ -853,7 +853,9 @@ scraperapiClient.get(post.collection_link)
 
   
 
+ })
 
+//end scrapefunction
  //check if nft is in database
     const savedb = await collections.count({collection_link:post.collection_link})
      if(savedb == 0){
@@ -878,9 +880,7 @@ scraperapiClient.get(post.collection_link)
     
     });
 
-})
 
-//end scrapefunction
     
 
 
