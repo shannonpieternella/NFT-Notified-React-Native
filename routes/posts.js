@@ -97,7 +97,7 @@ scraperapiClient.get(collectieURL)
         const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { floorprice: outputPrice }});
                   // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
 
-                  const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
+                  const updatedPost2 = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
                   // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
            }
        
@@ -464,7 +464,6 @@ const doSomething = async () => {
 
     const updatedPost = await Post.findByIdAndUpdate({_id:userId}, { $set: { status: 1 }});
               // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
-              const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
 
        }
    
