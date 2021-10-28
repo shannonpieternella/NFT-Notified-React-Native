@@ -167,7 +167,7 @@ await sleep2(10000);
     const collectiesUser = await Post.find({status:0, collection_link:collectionWebUrl});    
     const emailId = await collectiesUser[x].email_id.toString();
     const collectionUrlUser = await collectiesUser[x].collection_link.toString();
-    const collectionPriceUser = await collectiesUser[i].alert_floorprice.toString();
+    const collectionPriceUser = await collectiesUser[x].alert_floorprice.toString();
     const collectionAlert = await collectiesUser[x].alert_cat.toString();
     const userId = await collectiesUser[x]._id.toString();
     const collectionUserStatus = await collectiesUser[x].status.toString();
