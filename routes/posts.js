@@ -838,7 +838,21 @@ router.post('/collectionsnow', (req,res) => {
     const savedb = await collections.count({collection_link:post.collection_link})
      if(savedb == 0){
         console.log('count seh', savedb);
-    
+        const CollectionPost = new collections({
+            collection_link: req.body.collection_link,
+            floorprice: 0,
+            collection_name: "noname"
+            
+            });
+            
+            CollectionPost.save()
+            .then(data => {
+            res.json(data);
+            
+            })
+            .catch(err => { 
+                res.json({ message: err });
+                });
      }
         
     
