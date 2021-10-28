@@ -184,7 +184,7 @@ while (i < countCollectionsOfficialDb) {
 
     console.log(collectionUrlUser, '==', collectionWebUrl, '&&', collectionDbPrice, '<', collectionPriceUser, '&&', collectionAlert, '==', "<");
     console.log("user id",userId);
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname"){
 console.log('Email sent to', emailId)
 console.log('Price was Lower');
 
@@ -471,7 +471,7 @@ const doSomething = async () => {
 
     }
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname"){
         console.log('Email sent to', emailId);
         console.log('Price was Higher');
         
