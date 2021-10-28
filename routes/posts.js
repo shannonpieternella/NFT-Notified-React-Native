@@ -850,17 +850,10 @@ scraperapiClient.get(post.collection_link)
     const outputPrice = productPrice.eq(2).text();
     console.log('Output1st', outputPrice);
 
-//    //scrape name
 
-   const productName = $('.Blockreact__Block-sc-1xf18x6-0');
-   const outputName = productName.find('h2').text();
-   //.log(articles[2]);
-   console.log('OutputNamesrc', outputName);
   
 
- })
 
-//end scrapefunction
  //check if nft is in database
     const savedb = await collections.count({collection_link:post.collection_link})
      if(savedb == 0){
@@ -885,7 +878,9 @@ scraperapiClient.get(post.collection_link)
     
     });
 
+})
 
+//end scrapefunction
     
 
 
