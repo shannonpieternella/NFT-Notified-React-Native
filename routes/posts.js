@@ -828,7 +828,7 @@ router.post('/collectionsnow', (req,res) => {
     post.save()
     .then(data => {
     res.json(data);
-    console.log('Post succeed sessh');  
+    console.log('Post succeed sessh2');  
 
           })
     .catch(err => { 
