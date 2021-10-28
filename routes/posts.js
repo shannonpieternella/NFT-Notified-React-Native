@@ -1154,7 +1154,12 @@ router.post('/assetnew', (req,res) => {
         res.json({ message: err });
         });
     
-    });
+
+
+
+
+        
+    }); // end request
 
 //Specific post
 router.get('/:postId', async (req, res) => {
