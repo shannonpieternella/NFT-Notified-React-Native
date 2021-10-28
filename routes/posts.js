@@ -836,10 +836,10 @@ router.post('/collectionsnow', (req,res) => {
         });
  //check if nft is in database
     const savedb = await collections.count({collection_link:post.collection_link})
-    // if(savedb == 0){
+     if(savedb == 0){
         console.log('count seh', savedb);
     
-    // }
+     }
         
     
     });
