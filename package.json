@@ -20,6 +20,7 @@
     "mongoose": "^6.0.8",
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.13",
+    "postmark": "^2.7.8",
     "scraperapi-sdk": "^1.0.6"
   }
 }
