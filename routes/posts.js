@@ -807,8 +807,10 @@ router.post('/collectionsnow', (req,res) => {
     .catch(err => { 
         res.json({ message: err });
         });
-    
-    });
+
+        
+
+    }); //end request
 
 
 
@@ -831,6 +833,33 @@ router.post('/collectionsnow', (req,res) => {
     .catch(err => { 
         res.json({ message: err });
         });
+
+        //check if nft is in database
+        async function mainCheck() {
+ 
+            const collectiesWeb = await collections.find({collection_link:req.body.collection_link});
+                const collectionWebUrl = await collectiesWeb[0].collection_link.toString();
+            
+                    if(req.body.collection_link != collectionWebUrl){
+                        const CollectionPostNft = new collections({
+                            collection_link: req.body.collection_link,
+                            floorprice: 0,
+                            collection_name: "noname"
+                            
+                            });
+                            
+                            CollectionPostNft.save()
+                            .then(data => {
+                            res.json(data);
+                            
+                            })
+                            .catch(err => { 
+                                res.json({ message: err });
+                                });
+
+                    }
+                    }//end async bracket
+                    mainCheck()
     
     });
 
