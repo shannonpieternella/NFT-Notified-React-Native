@@ -857,6 +857,9 @@ router.post('/collectionsnow', (req,res) => {
                                 res.json({ message: err });
                                 });
 
+                    } else{
+console.log('Link already exists');
+
                     }
                     }//end async bracket
                     mainCheck()
