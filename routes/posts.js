@@ -85,10 +85,19 @@ scraperapiClient.get(collectieURL)
     const outputPrice = productPrice.eq(2).text();
     //console.log('5. Outputprice', i , outputPrice);
 
+   //scrape name
+
+   const productName = $('.Blockreact__Block-sc-1xf18x6-0');
+   const outputName = productName.find('h2').text();
+   console.log('OutputNamesrc', outputName);
+
     
     const doSomething = async () => {
 
         const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { floorprice: outputPrice }});
+                  // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
+
+                  const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
                   // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
            }
        
@@ -455,6 +464,8 @@ const doSomething = async () => {
 
     const updatedPost = await Post.findByIdAndUpdate({_id:userId}, { $set: { status: 1 }});
               // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
+              const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
+
        }
    
     doSomething();
