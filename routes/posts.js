@@ -794,7 +794,7 @@ compareFunction()
 router.post('/collectionsnow', (req,res) => {
     const CollectionPost = new collections({
     collection_link: req.body.collection_link,
-    floorprice: req.body.alert_floorprice,
+    floorprice: req.body.floorprice,
     collection_name: req.body.collection_name
     
     });
@@ -1158,7 +1158,7 @@ router.post('/assetnew', (req,res) => {
 
 
 
-        
+
     }); // end request
 
 //Specific post
