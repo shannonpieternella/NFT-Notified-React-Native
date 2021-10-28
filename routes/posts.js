@@ -816,7 +816,7 @@ router.post('/collectionsnow', (req,res) => {
 
  //Submits user post
 
- router.post('/', (req,res) => {
+ router.post('/', async (req,res) => {
     const post = new Post({
     email_id: req.body.email_id,
     collection_link: req.body.collection_link,
@@ -830,21 +830,24 @@ router.post('/collectionsnow', (req,res) => {
     res.json(data);
     console.log('Post succeed sessh');  
 
-       })
-    .catch(err => { 
-        res.json({ message: err });
-        });
-
-        //check if nft is in database
-    
-    });
-
-
+    //check if nft is in database
     const savedb = await collections.count({collection_link:post.collection_link})
     if(savedb == 0){
         console.log('count seh', savedb);
     
     }
+
+       })
+    .catch(err => { 
+        res.json({ message: err });
+        });
+
+        
+    
+    });
+
+
+    
 
 
     
