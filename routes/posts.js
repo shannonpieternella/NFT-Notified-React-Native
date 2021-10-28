@@ -831,7 +831,7 @@ router.post('/collectionsnow', (req,res) => {
     console.log('Post succeed sessh');  
 
     const savedb = await collections.find({collection_link:post.collection_link})
-if( savedb == NULL){
+if(!savedb){
     const CollectionPost = new collections({
         collection_link: req.body.collection_link,
         floorprice: 0,
