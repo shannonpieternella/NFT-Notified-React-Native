@@ -854,8 +854,8 @@ router.post('/collectionsnow', (req,res) => {
         console.log('count seh', savedb);
         const CollectionPost = new collections({
             collection_link: req.body.collection_link,
-            floorprice: outputPrice,
-            collection_name: outputName
+            floorprice: 0,
+            collection_name: "noname"
             
             });
             
