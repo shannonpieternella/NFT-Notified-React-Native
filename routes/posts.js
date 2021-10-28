@@ -836,10 +836,10 @@ router.post('/collectionsnow', (req,res) => {
 
         //check if nft is in database
         async function mainCheck() {
- 
+            console.log('0. Function maincheck triggered','collection link is', req.body.collection_link);     
             const collectiesWeb = await collections.find({collection_link:req.body.collection_link});
                 const collectionWebUrl = await collectiesWeb[0].collection_link.toString();
-            
+            console.log('1. request link is: ', req.body.collection_link, 'collection weburl is: ', collectionWebUrl);
                     if(req.body.collection_link != collectionWebUrl){
                         const CollectionPostNft = new collections({
                             collection_link: req.body.collection_link,
@@ -847,11 +847,11 @@ router.post('/collectionsnow', (req,res) => {
                             collection_name: "noname"
                             
                             });
-                            
+                            console.log('2.collectionpost save is: ', CollectionPostNft);     
                             CollectionPostNft.save()
                             .then(data => {
                             res.json(data);
-                            
+                            console.log('3. data is ', data);     
                             })
                             .catch(err => { 
                                 res.json({ message: err });
