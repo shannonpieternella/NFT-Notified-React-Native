@@ -830,33 +830,7 @@ router.post('/collectionsnow', (req,res) => {
     res.json(data);
     console.log('Post succeed sessh');  
 
-    const savedb = await collections.find({collection_link:post.collection_link})
-if(!savedb){
-    const CollectionPost = new collections({
-        collection_link: req.body.collection_link,
-        floorprice: 0,
-        collection_name: "noname"
-        
-        });
-        
-        CollectionPost.save()
-        .then(data => {
-        res.json(data);
-        console.log('Post saved in db');  
-
-        })
-        .catch(err => { 
-            res.json({ message: err });
-            });
-
-}else{
-    console.log('Post not saved already exists');  
-
-
-}
-
-
-    })
+       })
     .catch(err => { 
         res.json({ message: err });
         });
