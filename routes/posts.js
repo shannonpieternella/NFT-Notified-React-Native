@@ -858,7 +858,7 @@ console.log('Link already exists');
 
             }
             }//end async bracket
-            mainCheck()
+            mainCheck();
 //end async function
 
 
