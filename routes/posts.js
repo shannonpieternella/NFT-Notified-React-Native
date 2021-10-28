@@ -828,38 +828,32 @@ router.post('/collectionsnow', (req,res) => {
     post.save()
     .then(data => {
     res.json(data);
-    console.log('Post succeed seh');  
+    console.log('Post succeed sessh');  
 
-//check if in DB function
-async function mainCheck() {
-    console.log('0. Function maincheck triggered','collection link is', req.body.collection_link);     
-    const collectiesWeb = await collections.find({collection_link:req.body.collection_link});
-        const collectionWebUrl = await collectiesWeb[0].collection_link.toString();
-    console.log('1. request link is: ', req.body.collection_link, 'collection weburl is: ', collectionWebUrl);
-            if(req.body.collection_link != collectionWebUrl){
-                const CollectionPostNft = new collections({
-                    collection_link: req.body.collection_link,
-                    floorprice: 0,
-                    collection_name: "noname"
-                    
-                    });
-                    console.log('2.collectionpost save is: ', CollectionPostNft);     
-                    CollectionPostNft.save()
-                    .then(data => {
-                    res.json(data);
-                    console.log('3. data is ', data);     
-                    })
-                    .catch(err => { 
-                        res.json({ message: err });
-                        });
+    const savedb = await collections.find({collection_link:post.collection_link})
+if( savedb == NULL){
+    const CollectionPost = new collections({
+        collection_link: req.body.collection_link,
+        floorprice: 0,
+        collection_name: "noname"
+        
+        });
+        
+        CollectionPost.save()
+        .then(data => {
+        res.json(data);
+        console.log('Post saved in db');  
 
-            } else{
-console.log('Link already exists');
+        })
+        .catch(err => { 
+            res.json({ message: err });
+            });
 
-            }
-            }//end async bracket
-            mainCheck();
-//end async function
+}else{
+    console.log('Post not saved already exists');  
+
+
+}
 
 
     })
