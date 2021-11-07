@@ -38,6 +38,16 @@ res.json(posts);
         }
 });
 
+//Get back all collections
+router.get('/collecties', async (req, res) => {
+    try {
+const collections = await collections.find();;
+res.json(collections);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
 
 //Get back all the post
 router.get('/delete', async (req, res) => {
