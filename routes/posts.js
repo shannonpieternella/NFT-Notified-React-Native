@@ -31,10 +31,10 @@ const router = express.Router();
 
 router.post('/filtercollection', (req,res) => {
     
-    
+    const tes=req.body.test;
    
     
-    res.json(req);
+    res.json(tes);
     
     
   
