@@ -27,6 +27,20 @@ const sleep = (time) => {
 
 const router = express.Router();
 
+//filtercollection
+
+router.post('/filtercollection', (req,res) => {
+    
+    
+   
+    
+    res.json(req);
+    
+    
+  
+        
+
+    }); //end request
 
 //Get back all the post
 router.get('/', async (req, res) => {
@@ -58,6 +72,8 @@ res.json(posts);
         res.json({ message: err });
         }
 });
+
+
 
 
 
