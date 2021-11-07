@@ -27,6 +27,20 @@ const sleep = (time) => {
 
 const router = express.Router();
 
+
+router.get('/filter/:postId', async (req,res) => {
+    try{
+const updatedPost = await collections.find(
+    {collection_name: req.params.postId },
+// { $set: { title: req.body.title }}
+);
+res.json(updatedPost);
+} catch (err) {
+    res.json({ message: err});
+
+}
+    });
+
 //filtercollection
 
 router.post('/filtercollection', (req,res) => {
