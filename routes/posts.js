@@ -41,8 +41,8 @@ res.json(posts);
 //Get back all collections
 router.get('/collecties', async (req, res) => {
     try {
-const collections = await collections.find();;
-res.json(collections);
+const posts = await collections.find();;
+res.json(posts);
     } catch (err) {
         res.json({ message: err });
         }
