@@ -30,7 +30,7 @@ const router = express.Router();
 
 router.get('/filter/:postId', async (req,res) => {
     try{
-const updatedPost = await collections.find(
+const updatedPost = await collections.findOne(
     {collection_name: req.params.postId },
 // { $set: { title: req.body.title }}
 );
