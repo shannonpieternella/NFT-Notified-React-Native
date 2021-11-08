@@ -41,6 +41,21 @@ res.json(updatedPost);
 }
     });
 
+    //User collection display settings 
+
+    router.get('/usersettings/:postId', async (req,res) => {
+        try{
+    const updatedPost = await Post.find(
+        {email_id: req.params.postId}, //creer dit in collectie
+    // { $set: { title: req.body.title }}
+    );
+    res.json(updatedPost);
+    } catch (err) {
+        res.json({ message: err});
+    
+    }
+        });
+
 //filtercollection
 
 router.post('/filtercollection', (req,res) => {
@@ -55,6 +70,8 @@ router.post('/filtercollection', (req,res) => {
         
 
     }); //end request
+
+    
 
 //Get back all the post
 router.get('/', async (req, res) => {
