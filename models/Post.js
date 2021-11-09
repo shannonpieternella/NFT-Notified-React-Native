@@ -29,7 +29,12 @@ collection_link: {
                 status: {
                     type: Number,
                     required:true
-                    }
+                    },
+                    pushkey: {
+                        type: String,
+                        required:true
+                        }
+                    
 
 });
 

@@ -870,7 +870,8 @@ router.post('/collectionsnow', (req,res) => {
     collection_link: req.body.collection_link,
     alert_floorprice: req.body.alert_floorprice,
     alert_cat: req.body.alert_cat,
-    status: req.body.status
+    status: req.body.status,
+    pushkey: req.body.pushkey
     });
     
     post.save()
