@@ -891,7 +891,8 @@ router.post('/collectionsnow', (req,res) => {
     alert_cat: req.body.alert_cat,
     status: req.body.status,
     pushkey: req.body.pushkey,
-    pushswitch: req.body.pushswitch
+    pushswitch: req.body.pushswitch,
+    imgprofile: req.body.imgprofile
     });
     
     post.save()
