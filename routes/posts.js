@@ -43,13 +43,13 @@ res.json(updatedPost);
 
     // change individual post
 
-    router.get('/updatepost/:postId', async (req,res) => {
+    router.get('/updatepost/:postId/:uniqueId', async (req,res) => {
         try{
     if(req.params.postId == true){
-        const updatedPost3 = await collections.findByIdAndUpdate({_id: id}, { $set: { pushswitch: true }});
+        const updatedPost3 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
 
     } else {
-        const updatedPost4 = await collections.findByIdAndUpdate({_id: id}, { $set: { pushswitch: false }});
+        const updatedPost4 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
     }
            
     res.json("Updated");
