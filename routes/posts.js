@@ -871,7 +871,8 @@ router.post('/collectionsnow', (req,res) => {
     alert_floorprice: req.body.alert_floorprice,
     alert_cat: req.body.alert_cat,
     status: req.body.status,
-    pushkey: req.body.pushkey
+    pushkey: req.body.pushkey,
+    pushswitch: req.body.pushswitch
     });
     
     post.save()

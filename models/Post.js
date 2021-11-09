@@ -33,7 +33,12 @@ collection_link: {
                     pushkey: {
                         type: String,
                         required:true
-                        }
+                        },
+                        pushswitch: {
+                            type: Boolean,
+                            required:true
+                            }
+                    
                     
 
 });
