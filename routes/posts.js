@@ -14,6 +14,7 @@ const { count, collection } = require('../models/Post');
 const Long = BSON.Long;
 const sgMail = require('@sendgrid/mail') 
 const postmark = require("postmark");
+const { post } = require('scraperapi-sdk/src/scrape-url-request');
 const client = new postmark.Client("aba6fd3e-f215-4519-baa8-94614a8ca920");
 
 
@@ -46,10 +47,10 @@ res.json(updatedPost);
     router.get('/updatepost/:postId/:uniqueId', async (req,res) => {
         try{
     if(req.params.postId == "true"){
-        const updatedPost3 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
+        const updatedPost3 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
         res.json("Updated True");
     } else {
-        const updatedPost4 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
+        const updatedPost4 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
         res.json("Updated false");
     }
            
