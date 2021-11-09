@@ -47,12 +47,13 @@ res.json(updatedPost);
         try{
     if(req.params.postId == true){
         const updatedPost3 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
-
+        res.json("Updated True");
     } else {
         const updatedPost4 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
+        res.json("Updated false");
     }
            
-    res.json("Updated");
+    
     } catch (err) {
         res.json({ message: err});
     
