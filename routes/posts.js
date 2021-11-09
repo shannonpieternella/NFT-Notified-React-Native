@@ -45,7 +45,7 @@ res.json(updatedPost);
 
     router.get('/updatepost/:postId/:uniqueId', async (req,res) => {
         try{
-    if(req.params.postId == true){
+    if(req.params.postId == "true"){
         const updatedPost3 = await collections.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
         res.json("Updated True");
     } else {
