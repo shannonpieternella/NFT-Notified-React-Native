@@ -41,6 +41,23 @@ res.json(updatedPost);
 }
     });
 
+    // change individual post
+
+    router.get('/filter/:postId', async (req,res) => {
+        try{
+    if(req.params.postId == true){
+        const updatedPost3 = await collections.findByIdAndUpdate({_id: id}, { $set: { pushswitch: true }});
+
+    } else {
+        const updatedPost4 = await collections.findByIdAndUpdate({_id: id}, { $set: { pushswitch: false }});
+    }
+           
+    res.json("Updated");
+    } catch (err) {
+        res.json({ message: err});
+    
+    }
+        });   
     //User collection display settings 
 
     router.get('/usersettings/:postId', async (req,res) => {
