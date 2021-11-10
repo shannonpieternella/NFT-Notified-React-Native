@@ -117,13 +117,14 @@ router.get('/collectiequery/:search', async (req, res) => {
     try {
        const searchnow = req.params.search;
 
-       if(searchnow != ""){
-        const posts = await collections.find({collection_name: {$regex:searchnow,$options: 'i'}});;
-res.json(posts);
-       }else{
+       if(searchnow == ""){
         const allPosts = await collections.find();;
         res.json(allPosts);
 
+      
+       }else{
+        const posts = await collections.find({collection_name: {$regex:searchnow,$options: 'i'}});;
+        res.json(posts);
        }
 
     } catch (err) {
