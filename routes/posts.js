@@ -112,6 +112,15 @@ res.json(posts);
         }
 });
 
+//Get back all collections queries
+router.get('/collectiequery', async (req, res) => {
+    try {
+const posts = await collections.find();;
+res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
 
 //Get back all the post
 router.get('/delete', async (req, res) => {
@@ -241,7 +250,7 @@ while (i < countCollectionsOfficialDb) {
  await sleep2(1000);
     
 
-    //Krijg alle collections url updates prices in db
+    //Krijg alle collections url updates prices in db //save object then extract values with dots
     const collectiesWeb = await collections.find();
     const collectionWebUrl = await collectiesWeb[i].collection_link.toString();
     const collectionDbPrice = await collectiesWeb[i].floorprice.toString();
