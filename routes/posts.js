@@ -113,9 +113,10 @@ res.json(posts);
 });
 
 //Get back all collections queries
-router.get('/collectiequery', async (req, res) => {
+router.get('/collectiequery/:search', async (req, res) => {
     try {
-const posts = await collections.find();;
+       const searchnow = req.params.search;
+const posts = await collections.find({email_id: {$regex:searchnow}});;
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
