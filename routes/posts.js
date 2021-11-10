@@ -116,7 +116,7 @@ res.json(posts);
 router.get('/collectiequery/:search', async (req, res) => {
     try {
        const searchnow = req.params.search;
-const posts = await collections.find({email_id: {$regex:searchnow}});;
+const posts = await Post.find({email_id: {$regex:searchnow}});;
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
