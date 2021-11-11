@@ -113,9 +113,9 @@ res.json(posts);
 });
 
 //Get back all collections queries
-router.get('/collectiequery/:search', async (req, res) => {
+router.post('/collectiequery', async (req, res) => {
     try {
-       const searchnow = req.params.search;
+       const searchnow = req.body.search;
 
        if(searchnow == ""){
         const allPosts = await collections.find();;
@@ -897,6 +897,11 @@ router.post('/collectionsnow', (req,res) => {
         
 
     }); //end request
+
+   
+        
+
+    
 
 
 
