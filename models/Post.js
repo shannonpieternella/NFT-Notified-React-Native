@@ -35,7 +35,7 @@ collection_link: {
                         required:true
                         },
                         pushswitch: {
-                            type: Boolean,
+                            type: String,
                             required:true
                             },
                             imgprofile: {
