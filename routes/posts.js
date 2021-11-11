@@ -46,12 +46,12 @@ res.json(updatedPost);
 
     router.patch('/updatepost/:switchvalue/:uniqueId', async (req,res) => {
         try{
-    if(req.params.switchvalue === "true"){
-        const updatedPost3 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
+    if(req.params.switchvalue === "ON"){
+        const updatedPost3 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: "ON" }});
         return res.json("Updated True");
     }
-     if(req.params.switchvalue === "false"){
-        const updatedPost4 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
+     if(req.params.switchvalue === "OFF"){
+        const updatedPost4 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: "OFF" }});
         return res.json("Updated false");
     }
            
