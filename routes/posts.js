@@ -44,9 +44,9 @@ res.json(updatedPost);
 
     // change individual post
 
-    router.get('/updatepost/:postId/:uniqueId', async (req,res) => {
+    router.patch('/updatepost/:switchvalue/:uniqueId', async (req,res) => {
         try{
-    if(req.params.postId == "true"){
+    if(req.params.switchvalue === "true"){
         const updatedPost3 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
         res.json("Updated True");
     } else {
