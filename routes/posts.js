@@ -48,10 +48,11 @@ res.json(updatedPost);
         try{
     if(req.params.switchvalue === "true"){
         const updatedPost3 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: true }});
-        res.json("Updated True");
-    } else {
+        return res.json("Updated True");
+    }
+     if(req.params.switchvalue === "false"){
         const updatedPost4 = await Post.findByIdAndUpdate({_id: req.params.uniqueId}, { $set: { pushswitch: false }});
-        res.json("Updated false");
+        return res.json("Updated false");
     }
            
     
