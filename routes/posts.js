@@ -917,7 +917,9 @@ router.post('/collectionsnow', (req,res) => {
     status: req.body.status,
     pushkey: req.body.pushkey,
     pushswitch: req.body.pushswitch,
-    imgprofile: req.body.imgprofile
+    imgprofile: req.body.imgprofile,
+    eth_userinput:req.body.eth_userinput,
+    name_collection:req.body.name_collection
     });
     
     post.save()
@@ -1292,7 +1294,7 @@ res.json({ message: err});
 // Delete Post
 router.delete('/:postId', async (req,res) => {
     try{
-const removedPost = await Post.removea({_id: req.params.postId});
+const removedPost = await Post.remove({_id: req.params.postId});
 res.json(removedPost);
 }catch (err) {
     res.json({ message: err});

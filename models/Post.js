@@ -42,6 +42,15 @@ collection_link: {
                                 type: String,
                                 required:true
                                 },
+                                eth_userinput: {
+                                    type: String,
+                                    required:true
+                                    },
+                                    name_collection: {
+                                        type: String,
+                                        required:true
+                                        }
+
                         
                     
                     
