@@ -280,7 +280,7 @@ while (i < countCollectionsOfficialDb) {
     const userId = await collectiesUser[x]._id.toString();
     const collectionUserStatus = await collectiesUser[x].status.toString();
     const pushkey = await collectiesUser[x].pushkey.toString();
-    const ethuserinp = await collectiesUser[x].eth_userinput.toString();
+    // const ethuserinp = await collectiesUser[x].eth_userinput.toString();
     const name = await collectiesUser[x].name_collection.toString();
 
 
