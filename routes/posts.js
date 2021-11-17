@@ -279,13 +279,41 @@ while (i < countCollectionsOfficialDb) {
     const collectionAlert = await collectiesUser[x].alert_cat.toString();
     const userId = await collectiesUser[x]._id.toString();
     const collectionUserStatus = await collectiesUser[x].status.toString();
+    const pushkey = await collectiesUser[x].pushkey.toString();
 
 
     console.log(collectionUrlUser, '==', collectionWebUrl, '&&', collectionDbPrice, '<', collectionPriceUser, '&&', collectionAlert, '==', "<");
     console.log("user id",userId);
+
+
     if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname"){
 console.log('Email sent to', emailId)
 console.log('Price was Lower');
+
+
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://exp.host/--/api/v2/push/send',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "to": pushkey,
+    "title": "NFT Notified - Legends price just got lower",
+    "badge": 42,
+    "body": "yow",
+    "data": {
+      "foo": "bar"
+    },
+    "link": "https://niftynotified.com"
+  })
+
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
 
 //Email function
 
@@ -562,6 +590,31 @@ const doSomething = async () => {
     if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname"){
         console.log('Email sent to', emailId);
         console.log('Price was Higher');
+
+
+        var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://exp.host/--/api/v2/push/send',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "to": "ExponentPushToken[zYHAY1BFgdz5DI2XrW5EYx]",
+    "title": "NFT Notified - Legends price just got lower",
+    "badge": 42,
+    "body": "yow",
+    "data": {
+      "foo": "bar"
+    },
+    "link": "https://niftynotified.com"
+  })
+
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
         
 
     //Send mail function
