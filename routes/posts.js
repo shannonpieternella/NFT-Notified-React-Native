@@ -66,7 +66,7 @@ res.json(updatedPost);
     router.get('/usersettings/:postId', async (req,res) => {
         try{
     const updatedPost = await Post.find(
-        {email_id: req.params.postId}, //creer dit in collectie
+        {email_id: req.params.postId,status: 0}, //creer dit in collectie
     // { $set: { title: req.body.title }}
     );
     res.json(updatedPost);
