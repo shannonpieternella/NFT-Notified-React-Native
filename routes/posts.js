@@ -604,7 +604,7 @@ const doSomething = async () => {
           },
           body: JSON.stringify({
             "to": pushkey,
-            "title": `NFT Notified ${name} price just got Higher`,
+            "title": `NFT Notified price just got Higher`,
             "badge": 42,
             "body": `Check your email for direct link`,
             "data": {
