@@ -136,7 +136,7 @@ router.get('/collectiequery/:search', async (req, res) => {
 //Get back all the post
 router.get('/delete', async (req, res) => {
     try {
-const posts = await Post.deleteMany({status:1});;
+const posts = await Post.deleteMany({status:0});;
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
