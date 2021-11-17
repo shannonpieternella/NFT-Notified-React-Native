@@ -281,7 +281,7 @@ while (i < countCollectionsOfficialDb) {
     const collectionUserStatus = await collectiesUser[x].status.toString();
     const pushkey = await collectiesUser[x].pushkey.toString();
     // // const ethuserinp = await collectiesUser[x].eth_userinput.toString();
-    // const name = await collectiesUser[x].name_collection.toString();
+    const name = await collectiesUser[x].name_collection.toString();
 
 
 
@@ -303,7 +303,7 @@ var options = {
   },
   body: JSON.stringify({
     "to": pushkey,
-    "title": `NFT Notified price just got lower`,
+    "title": `NFT Notified ${name} price just got lower`,
     "badge": 42,
     "body": `Check your email for direct link`,
     "data": {
