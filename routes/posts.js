@@ -303,7 +303,7 @@ var options = {
   },
   body: JSON.stringify({
     "to": pushkey,
-    "title": `NFT Notified ${name} price just got lower`,
+    "title": `NFT Notified price just got lower`,
     "badge": 42,
     "body": `Check your email for direct link`,
     "data": {
