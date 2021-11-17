@@ -280,6 +280,9 @@ while (i < countCollectionsOfficialDb) {
     const userId = await collectiesUser[x]._id.toString();
     const collectionUserStatus = await collectiesUser[x].status.toString();
     const pushkey = await collectiesUser[x].pushkey.toString();
+    const ethuserinp = await collectiesUser[x].eth_userinput.toString();
+    const name = await collectiesUser[x].name_collection.toString();
+
 
 
     console.log(collectionUrlUser, '==', collectionWebUrl, '&&', collectionDbPrice, '<', collectionPriceUser, '&&', collectionAlert, '==', "<");
@@ -300,11 +303,11 @@ var options = {
   },
   body: JSON.stringify({
     "to": pushkey,
-    "title": "NFT Notified - Legends price just got lower",
+    "title": `NFT Notified ${name} price just got lower`,
     "badge": 42,
-    "body": "yow",
+    "body": `Check your email for direct link`,
     "data": {
-      "foo": "bar"
+      "NFT": "Notified"
     },
     "link": "https://niftynotified.com"
   })
@@ -593,28 +596,28 @@ const doSomething = async () => {
 
 
         var request = require('request');
-var options = {
-  'method': 'POST',
-  'url': 'https://exp.host/--/api/v2/push/send',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    "to": "ExponentPushToken[zYHAY1BFgdz5DI2XrW5EYx]",
-    "title": "NFT Notified - Legends price just got lower",
-    "badge": 42,
-    "body": "yow",
-    "data": {
-      "foo": "bar"
-    },
-    "link": "https://niftynotified.com"
-  })
-
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-});
+        var options = {
+          'method': 'POST',
+          'url': 'https://exp.host/--/api/v2/push/send',
+          'headers': {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "to": pushkey,
+            "title": `NFT Notified ${name} price just got Higher`,
+            "badge": 42,
+            "body": `Check your email for direct link`,
+            "data": {
+              "NFT": "Notified"
+            },
+            "link": "https://niftynotified.com"
+          })
+        
+        };
+        request(options, function (error, response) {
+          if (error) throw new Error(error);
+          console.log(response.body);
+        });
         
 
     //Send mail function
