@@ -292,7 +292,7 @@ while (i < countCollectionsOfficialDb) {
 
 
     if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname" && pushOnOff == "ON"){
-console.log('Email sent to', emailId)
+console.log('Email sent', emailId)
 console.log('Price was Lower');
 
 
