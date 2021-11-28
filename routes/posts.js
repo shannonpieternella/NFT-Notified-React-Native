@@ -282,6 +282,8 @@ while (i < countCollectionsOfficialDb) {
     const pushkey = await collectiesUser[x].pushkey.toString();
     // // const ethuserinp = await collectiesUser[x].eth_userinput.toString();
     const name = await collectiesUser[x].name_collection.toString();
+    const imgprof = await collectiesUser[x].imgprofile.toString();
+    const pushOnOff = await collectiesUser[x].pushswitch.toString();
 
 
 
@@ -289,7 +291,7 @@ while (i < countCollectionsOfficialDb) {
     console.log("user id",userId);
 
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname" && pushOnOff == "ON"){
 console.log('Email sent to', emailId)
 console.log('Price was Lower');
 
@@ -302,14 +304,18 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    "to": pushkey,
-    "title": `NFT Notified ${name} price just got lower`,
-    "badge": 42,
-    "body": `Check your email for direct link`,
+    "to": `${pushkey}`,
+    "title": `Price of ${name} is ${collectionDbPrice}`,
+    "body": `NFT price just went lower then ${collectionPriceUser}`,
     "data": {
-      "NFT": "Notified"
-    },
-    "link": "https://niftynotified.com"
+      "type": "nft",
+      "url": `${collectionUrlUser}`,
+      "priceweb": `${collectionDbPrice}`,
+      "userprice": `${collectionPriceUser}`,
+      "cat": `${collectionAlert}`,
+      "image": `${imgprof}`,
+      "collectionname": `${name}`
+    }
   })
 
 };
@@ -317,6 +323,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
 });
+
 
 //Email function
 
@@ -590,34 +597,38 @@ const doSomething = async () => {
 
     }
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname" && pushOnOff == "ON"){
         console.log('Email sent to', emailId);
         console.log('Price was Higher');
 
 
         var request = require('request');
-        var options = {
-          'method': 'POST',
-          'url': 'https://exp.host/--/api/v2/push/send',
-          'headers': {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            "to": pushkey,
-            "title": `NFT Notified ${name} price just got Higher`,
-            "badge": 42,
-            "body": `Check your email for direct link`,
-            "data": {
-              "NFT": "Notified"
-            },
-            "link": "https://niftynotified.com"
-          })
-        
-        };
-        request(options, function (error, response) {
-          if (error) throw new Error(error);
-          console.log(response.body);
-        });
+var options = {
+  'method': 'POST',
+  'url': 'https://exp.host/--/api/v2/push/send',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "to": `${pushkey}`,
+    "title": `Price of ${name} is ${collectionDbPrice}`,
+    "body": `NFT price just went higher then ${collectionPriceUser}`,
+    "data": {
+      "type": "nft",
+      "url": `${collectionUrlUser}`,
+      "priceweb": `${collectionDbPrice}`,
+      "userprice": `${collectionPriceUser}`,
+      "cat": `${collectionAlert}`,
+      "image": `${imgprof}`,
+      "collectionname": `${name}`
+    }
+  })
+
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
         
 
     //Send mail function
