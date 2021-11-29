@@ -258,7 +258,7 @@ while (i < countCollectionsOfficialDb) {
 
     try {
         
- await sleep2(1000);
+//  await sleep2(1000);
     
 
     //Krijg alle collections url updates prices in db //save object then extract values with dots
