@@ -291,7 +291,7 @@ while (i < countCollectionsOfficialDb) {
     console.log("user id",userId);
 
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname" && pushOnOff == "ON"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname"){
 console.log('Email sent', emailId)
 console.log('Price was Lower');
 
@@ -597,7 +597,7 @@ const doSomething = async () => {
 
     }
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname" && pushOnOff == "ON"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname" ){
         console.log('Email sent to', emailId);
         console.log('Price was Higher');
 
