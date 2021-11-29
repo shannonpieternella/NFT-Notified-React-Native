@@ -43,7 +43,7 @@ collection_link: {
                                 required:true
                                 },
                                 eth_userinput: {
-                                    type: String,
+                                    type: Decimal128,
                                     required:true
                                     },
                                     name_collection: {
