@@ -271,7 +271,7 @@ while (i < countCollectionsOfficialDb) {
     const collectiesUserCount = await Post.count({status:0, collection_link:collectionWebUrl});
     for (let x = 0; x < collectiesUserCount; x++) {
         //User form db gegevens
-        
+        console.log("count of inside posts: ", x); 
     const collectiesUser = await Post.find({status:0, collection_link:collectionWebUrl});    
     const emailId = await collectiesUser[x].email_id.toString();
     const collectionUrlUser = await collectiesUser[x].collection_link.toString();
