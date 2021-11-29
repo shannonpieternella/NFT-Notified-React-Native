@@ -264,7 +264,7 @@ while (i < countCollectionsOfficialDb) {
     //Krijg alle collections url updates prices in db //save object then extract values with dots
     const collectiesWeb = await collections.find();
     const collectionWebUrl = await collectiesWeb[i].collection_link.toString();
-    const collectionDbPrice = await collectiesWeb[i].floorprice.toString();
+    const collectionDbPrice = await collectiesWeb[i].floorprice;
     const collectionName = await collectiesWeb[i].collection_name.toString();
     console.log("count of all posts: ", i);
 
@@ -275,12 +275,12 @@ while (i < countCollectionsOfficialDb) {
     const collectiesUser = await Post.find({status:0, collection_link:collectionWebUrl});    
     const emailId = await collectiesUser[x].email_id.toString();
     const collectionUrlUser = await collectiesUser[x].collection_link.toString();
-    const collectionPriceUser = await collectiesUser[x].alert_floorprice.toString();
+    const collectionPriceUser = await collectiesUser[x].alert_floorprice;
     const collectionAlert = await collectiesUser[x].alert_cat.toString();
     const userId = await collectiesUser[x]._id.toString();
     const collectionUserStatus = await collectiesUser[x].status.toString();
     const pushkey = await collectiesUser[x].pushkey.toString();
-    // // const ethuserinp = await collectiesUser[x].eth_userinput.toString();
+    const ethuserinp = await collectiesUser[x].eth_userinput;
     const name = await collectiesUser[x].name_collection.toString();
     const imgprof = await collectiesUser[x].imgprofile.toString();
     const pushOnOff = await collectiesUser[x].pushswitch.toString();
@@ -291,7 +291,7 @@ while (i < countCollectionsOfficialDb) {
     console.log("user id",userId);
 
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < collectionPriceUser && collectionAlert == "<" && collectionName != "noname"){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice < eth_userinput && collectionAlert == "<" && collectionName != "noname"){
 console.log('Email sent', emailId)
 console.log('Price was Lower');
 
@@ -597,7 +597,7 @@ const doSomething = async () => {
 
     }
 
-    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > collectionPriceUser && collectionAlert == ">" && collectionName != "noname" ){
+    if(collectionUrlUser == collectionWebUrl && collectionDbPrice > eth_userinput && collectionAlert == ">" && collectionName != "noname" ){
         console.log('Email sent to', emailId);
         console.log('Price was Higher');
 
