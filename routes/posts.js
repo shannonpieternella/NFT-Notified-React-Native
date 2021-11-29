@@ -309,7 +309,7 @@ var options = {
     "body": `NFT price just went lower then ${collectionPriceUser}`,
     "data": {
       "type": "nft",
-      "url": `${collectionUrlUser}`,
+      "url": `${collectionUrlUser}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW`,
       "priceweb": `${collectionDbPrice}`,
       "userprice": `${collectionPriceUser}`,
       "cat": `${collectionAlert}`,
@@ -615,7 +615,7 @@ var options = {
     "body": `NFT price just went higher then ${collectionPriceUser}`,
     "data": {
       "type": "nft",
-      "url": `${collectionUrlUser}`,
+      "url": `${collectionUrlUser}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW`,
       "priceweb": `${collectionDbPrice}`,
       "userprice": `${collectionPriceUser}`,
       "cat": `${collectionAlert}`,
