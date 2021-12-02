@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833311932622",
+    "project_id": "niftynotified",
+    "storage_bucket": "niftynotified.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833311932622:android:e687d3ac0b72ab3442d09f",
+        "android_client_info": {
+          "package_name": "com.nftnotified.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833311932622-hdqlv7f60akm8krojfiqoc4o3ropt3kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-kkpZ0ubxd6oWRTrADQWYaIfGydoeak8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833311932622-hdqlv7f60akm8krojfiqoc4o3ropt3kg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -306,12 +306,12 @@ var options = {
   body: JSON.stringify({
     "to": `${pushkey}`,
     "title": `Price of ${name} is ${collectionDbPrice}`,
-    "body": `NFT price just went lower then ${collectionPriceUser}`,
+    "body": `NFT price just went lower than ${ethuserinp}`,
     "data": {
       "type": "nft",
       "url": `${collectionUrlUser}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW`,
       "priceweb": `${collectionDbPrice}`,
-      "userprice": `${collectionPriceUser}`,
+      "userprice": `${ethuserinp}`,
       "cat": `${collectionAlert}`,
       "image": `${imgprof}`,
       "collectionname": `${name}`
@@ -612,12 +612,12 @@ var options = {
   body: JSON.stringify({
     "to": `${pushkey}`,
     "title": `Price of ${name} is ${collectionDbPrice}`,
-    "body": `NFT price just went higher then ${collectionPriceUser}`,
+    "body": `NFT price just went higher than ${ethuserinp}`,
     "data": {
       "type": "nft",
       "url": `${collectionUrlUser}?search[sortAscending]=true&search[sortBy]=PRICE&search[toggles][0]=BUY_NOW`,
       "priceweb": `${collectionDbPrice}`,
-      "userprice": `${collectionPriceUser}`,
+      "userprice": `${ethuserinp}`,
       "cat": `${collectionAlert}`,
       "image": `${imgprof}`,
       "collectionname": `${name}`
