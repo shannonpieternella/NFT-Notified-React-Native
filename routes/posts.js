@@ -103,6 +103,28 @@ res.json(posts);
         }
 });
 
+
+//Get back all the post immutablex
+router.get('/immutablex', async (req, res) => {
+    try {
+const posts = await immutablexcollection.find();;
+res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
+
+//Get back all the post solanaart
+router.get('/solanart', async (req, res) => {
+    try {
+const posts = await solanacollections.find();;
+res.json(posts);
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
 //Get back all collections
 router.get('/collecties', async (req, res) => {
     try {
@@ -943,7 +965,7 @@ setTimeout(() => {
 compareFunction()
 
 
-//Submits collections post
+//Submits collections post opensea
 
 router.post('/collectionsnow', (req,res) => {
     const CollectionPost = new collections({
