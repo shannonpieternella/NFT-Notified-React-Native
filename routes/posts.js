@@ -112,7 +112,7 @@ router.get('/immutablex', async (req, res) => {
 const posts = await immutablexcollection.find();;
 res.json(posts);
     } catch (err) {
-        res.json({ message: err });
+        res.json('werkt niet');
         }
 });
 
