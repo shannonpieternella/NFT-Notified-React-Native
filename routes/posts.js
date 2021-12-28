@@ -121,7 +121,7 @@ router.get('/solanart', async (req, res) => {
 const posts = await solanacollections.find();;
 res.json(posts);
     } catch (err) {
-        res.json({ message: err });
+        res.json('het werkt niet');
         }
 });
 
