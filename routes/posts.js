@@ -269,10 +269,12 @@ res.json(posts);
 
 // } //function main
 
+
+
+
+// main();
+
 //end function scraper here pending
-
-
-main();
 
 async function compareFunction() {
     const countStatusGlobal = await Post.count();
