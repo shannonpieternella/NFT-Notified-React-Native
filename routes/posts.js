@@ -171,102 +171,105 @@ res.json(posts);
 
 
 
+//scraper function beginning pending
 
-async function main() {
+// async function main() {
 
-    const countStatusGlobal = await collections.count();
-    let i = -1;
+//     const countStatusGlobal = await collections.count();
+//     let i = -1;
     
-while (i < countStatusGlobal) {
-const countCollectie = await collections.count();            
-    const collections1 = await collections.find();
-    i += 1;
-    //console.log('Collecties count', countCollectie, 'Collecties', collections1);  
-//begin system
+// while (i < countStatusGlobal) {
+// const countCollectie = await collections.count();            
+//     const collections1 = await collections.find();
+//     i += 1;
+//     //console.log('Collecties count', countCollectie, 'Collecties', collections1);  
+// //begin system
 
-try {
-    const collectieURL = await collections1[i].collection_link.toString();
-   // await console.log('1. CollectieURL ', collectieURL);
-    const floorPrijs = await collections1[i].floorprice.toString();
-   // await console.log('2. Floorprice ', floorPrijs);
-    const CollectieNaam = await collections1[i].collection_name.toString();
-   // await console.log('3. CollectieNaam ', CollectieNaam);
-    const id = await collections1[i]._id.toString();
-          //  await console.log('4 ID', id);
-//Scrape function
+// try {
+//     const collectieURL = await collections1[i].collection_link.toString();
+//    // await console.log('1. CollectieURL ', collectieURL);
+//     const floorPrijs = await collections1[i].floorprice.toString();
+//    // await console.log('2. Floorprice ', floorPrijs);
+//     const CollectieNaam = await collections1[i].collection_name.toString();
+//    // await console.log('3. CollectieNaam ', CollectieNaam);
+//     const id = await collections1[i]._id.toString();
+//           //  await console.log('4 ID', id);
+// //Scrape function
 
-scraperapiClient.get(collectieURL)
-.then(response => {
- //console.log(response)
- html = response
+// scraperapiClient.get(collectieURL)
+// .then(response => {
+//  //console.log(response)
+//  html = response
  
- //console.log(html)
- const $ = cheerio.load(html)
+//  //console.log(html)
+//  const $ = cheerio.load(html)
 
-//  //scrape price
-   const productPrice = $('.Overflowreact__OverflowContainer-sc-10mm0lu-0');
-    const outputPrice = productPrice.eq(2).text();
-    //console.log('5. Outputprice', i , outputPrice);
+// //  //scrape price
+//    const productPrice = $('.Overflowreact__OverflowContainer-sc-10mm0lu-0');
+//     const outputPrice = productPrice.eq(2).text();
+//     //console.log('5. Outputprice', i , outputPrice);
 
-   //scrape name
+//    //scrape name
 
-   const productName = $('.Blockreact__Block-sc-1xf18x6-0');
-   const outputName = productName.find('h2').text();
-   console.log('OutputNamesrc', outputName);
+//    const productName = $('.Blockreact__Block-sc-1xf18x6-0');
+//    const outputName = productName.find('h2').text();
+//    console.log('OutputNamesrc', outputName);
 
     
-    const doSomething = async () => {
+//     const doSomething = async () => {
 
-        const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { floorprice: outputPrice }});
-                  // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
+//         const updatedPost = await collections.findByIdAndUpdate({_id: id}, { $set: { floorprice: outputPrice }});
+//                   // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
 
-                  const updatedPost2 = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
-                  // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
-           }
+//                   const updatedPost2 = await collections.findByIdAndUpdate({_id: id}, { $set: { collection_name: outputName }});
+//                   // console.log('6. database', collectieURL, "prijs geupdate naar: ", outputPrice);
+//            }
        
-        doSomething();
+//         doSomething();
        
-       //end scrapefunction
+//        //end scrapefunction
     
 
     
 
- }) // end scraper
+//  }) // end scraper
 
  
 
 
 
-} catch (error) {
+// } catch (error) {
     
-} // catch bracket
+// } // catch bracket
  
 
-await sleep2(10000);
-//console.log('sleep 10sec');
-} 
+// await sleep2(10000);
+// //console.log('sleep 10sec');
+// } 
 
-// if condition is false
-i=-1;
-main();
-//console.log('reset', 'condition false');
+// // if condition is false
+// i=-1;
+// main();
+// //console.log('reset', 'condition false');
 
-}
-
-
-
-function sleep2(ms) {
-return new Promise((accept) => {
-setTimeout(() => {
-    accept();
-}, ms);
-
-
-}) //function accept()
+// }
 
 
 
-} //function main
+// function sleep2(ms) {
+// return new Promise((accept) => {
+// setTimeout(() => {
+//     accept();
+// }, ms);
+
+
+// }) //function accept()
+
+
+
+// } //function main
+
+//end function scraper here pending
 
 
 main();
