@@ -177,6 +177,26 @@ router.get('/solanart/:search', async (req, res) => {
         }
 });
 
+//Get back all collections queries
+router.get('/immutablex/:search', async (req, res) => {
+    try {
+       const searchnow = req.params.search;
+
+       if(searchnow == ""){
+        const allPosts = await immutablexcollections.find();;
+        res.json(allPosts);
+
+      
+       }else{
+        const posts = await immutablexcollections.find({collection_name: {$regex:searchnow,$options: 'i'}});;
+        res.json(posts);
+       }
+
+    } catch (err) {
+        res.json({ message: err });
+        }
+});
+
 //Get back all the post
 router.get('/delete', async (req, res) => {
     try {
