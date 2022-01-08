@@ -183,12 +183,12 @@ router.get('/immutablex/:search', async (req, res) => {
        const searchnow = req.params.search;
 
        if(searchnow == ""){
-        const allPosts = await immutablexcollections.find();;
+        const allPosts = await immutablexcollection.find();;
         res.json(allPosts);
 
       
        }else{
-        const posts = await immutablexcollections.find({collection_name: {$regex:searchnow,$options: 'i'}});;
+        const posts = await immutablexcollection.find({collection_name: {$regex:searchnow,$options: 'i'}});;
         res.json(posts);
        }
 
