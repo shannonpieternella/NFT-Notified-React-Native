@@ -143,8 +143,8 @@ router.get('/collectiequery/:search', async (req, res) => {
        const searchnow = req.params.search;
 
        if(searchnow == ""){
-        // const allPosts = await collections.find();;
-        // res.json(allPosts);
+        const allPosts = await collections.find();;
+        res.json(allPosts);
 
       
        }else{
@@ -163,8 +163,8 @@ router.get('/solanart/:search', async (req, res) => {
        const searchnow = req.params.search;
 
        if(searchnow == ""){
-        // const allPosts = await solanacollections.find();;
-        // res.json(allPosts);
+        const allPosts = await solanacollections.find();;
+        res.json(allPosts);
 
       
        }else{
@@ -183,8 +183,8 @@ router.get('/immutablex/:search', async (req, res) => {
        const searchnow = req.params.search;
 
        if(searchnow == ""){
-        // const allPosts = await immutablexcollection.find();;
-        // res.json(allPosts);
+        const allPosts = await immutablexcollection.find();;
+        res.json(allPosts);
 
       
        }else{
