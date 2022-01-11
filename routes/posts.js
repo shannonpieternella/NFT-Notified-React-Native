@@ -1681,7 +1681,7 @@ console.log('sleep 0sec gangg', i);
 
 
 i=-1;
-compareFunction();
+compareFunctionx();
 console.log('reset', 'condition false gang', i);
 
 }
@@ -2379,7 +2379,7 @@ console.log('sleep 0sec gangg', i);
 
 
 i=-1;
-compareFunction();
+compareFunctionSolana();
 console.log('reset', 'condition false gang', i);
 
 }
