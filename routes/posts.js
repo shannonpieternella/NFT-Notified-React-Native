@@ -1800,7 +1800,7 @@ const obj = {
 client.sendEmail({
   "From": "team@niftynotified.com",
   "To": emailId,
-  "Subject": `Price alert for ${obj.nftname}`,
+  "Subject": `Price alert for: ${obj.nftname}`,
   "TextBody": `The floor price went lower then ${obj.webprice}`,
   "HtmlBody": `<html>
   <head>
