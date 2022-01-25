@@ -99,7 +99,7 @@ router.post('/filtercollection', (req,res) => {
 //Get back all the post
 router.get('/', async (req, res) => {
     try {
-const posts = await Post.find().limit(5);
+const posts = await Post.find();
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
@@ -131,7 +131,7 @@ res.json(posts);
 //Get back all collections
 router.get('/collecties', async (req, res) => {
     try {
-const posts = await collections.find();;
+const posts = await collections.find().limit(5);
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
