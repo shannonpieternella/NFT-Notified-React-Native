@@ -2,17 +2,27 @@ const { json } = require('body-parser');
 const { response } = require('express');
 const express = require('express');
 const Post = require('../models/Post');
-const solanacollections = require('../models/solanacollections');
-const immutablexcollection = require('../models/immutablexcollection');
 const Asset = require('../models/Asset');
 const email = require('../models/email');
 const sdk = require('api');
-const contracts = require('../models/contracts');
+const solanacollections = require('../models/solanacollections');
+const immutablexcollection = require('../models/immutablexcollection');
 const collections = require('../models/collections');
+const contracts = require('../models/contracts');
+const cheerio = require('cheerio');
+const scraperapiClient = require('scraperapi-sdk')('d9e600fc58fcacdbccc251fb5929bfbe');
 const BSON = require('bson');
-const { count, collection } = require('../models/Post');
+const { count } = require('../models/Post');
 const Long = BSON.Long;
+const sgMail = require('@sendgrid/mail') 
 
+API_KEY = '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';
+
+sgMail.setApiKey(API_KEY)
+
+const sleep = (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time))
+  } 
 
 // // 
 // const sleep = (time) => {
@@ -89,7 +99,7 @@ router.post('/filtercollection', (req,res) => {
 //Get back all the post
 router.get('/', async (req, res) => {
     try {
-const posts = await Post.find();;
+const posts = await Post.find().limit(5);
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
@@ -190,7 +200,7 @@ router.get('/immutablex/:search', async (req, res) => {
 
 //Get back all the post
 
-while (0==0) {
+
     router.get('/delete', async (req, res) => {
         try {
     const posts = await Post.deleteMany({floorprice:0});;
@@ -200,7 +210,7 @@ while (0==0) {
             }
     });
 
-}
+
 
 
 
