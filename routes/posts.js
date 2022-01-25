@@ -131,7 +131,7 @@ res.json(posts);
 //Get back all collections
 router.get('/collecties', async (req, res) => {
     try {
-const posts = await collections.find().limit(5);
+const posts = await collections.find().limit(61);
 res.json(posts);
     } catch (err) {
         res.json({ message: err });
