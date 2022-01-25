@@ -4,8 +4,7 @@ const app = express(); //run express module and save in variable
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const cheerio = require('cheerio');
-const scraperapiClient = require('scraperapi-sdk')('d9e600fc58fcacdbccc251fb5929bfbe');
+
 require('dotenv/config');
 
 app.use(bodyParser.json()); //parses body response
