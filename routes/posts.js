@@ -2462,7 +2462,7 @@ router.post('/collectionsnow', (req,res) => {
     revealdatum:req.body.revealdatum,
     chosentime:req.body.chosentime,
     statusnotification:req.body.statusnotification,
-    dompanymintname:req.body.ompanymintname,
+    companymintname:req.body.companymintname,
     datumnotification:req.body.datumnotification,
     usernotification:req.body.usernotification,
     checkboxarray:req.body.checkboxarray
