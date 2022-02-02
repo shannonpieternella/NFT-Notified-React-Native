@@ -49,7 +49,42 @@ collection_link: {
                                     name_collection: {
                                         type: String,
                                         required:true
-                                        }
+                                        },
+                                        mintdatum: {
+                                            type: String,
+                                            required:false
+                                            },
+                                           revealdatum: {
+                                                type: String,
+                                                required:false
+                                                },
+
+                                                datumnotification: {
+                                                    type: String,
+                                                    required:false
+                                                    },
+                                                    chosentime: {
+                                                        type: String,
+                                                        required:false
+                                                        },
+                                                        statusnotification: {
+                                                            type: Number,
+                                                            required:false
+                                                            },
+                                                            companymintname: {
+                                                                type: String,
+                                                                required:false
+                                                                },
+                                                                usernotification: {
+                                                                    type: String,
+                                                                    required:false
+                                                                    },
+                                                                    checkboxarray: {
+                                                                        type: Array,
+                                                                        required:false
+                                                                        },
+    
+
 
                         
                     

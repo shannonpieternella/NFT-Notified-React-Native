@@ -2457,7 +2457,16 @@ router.post('/collectionsnow', (req,res) => {
     pushswitch: req.body.pushswitch,
     imgprofile: req.body.imgprofile,
     eth_userinput:req.body.eth_userinput,
-    name_collection:req.body.name_collection
+    name_collection:req.body.name_collection,
+    mintdatum:req.body.mintdatum,
+    revealdatum:req.body.revealdatum,
+    chosentime:req.body.chosentime,
+    statusnotification:req.body.statusnotification,
+    dompanymintname:req.body.ompanymintname,
+    datumnotification:req.body.datumnotification,
+    usernotification:req.body.usernotification,
+    checkboxarray:req.body.checkboxarray
+
     });
     
     post.save()
