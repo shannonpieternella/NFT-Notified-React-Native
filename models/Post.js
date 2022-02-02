@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const PostSchema = mongoose.Schema({
 email_id: {
 type: String,
-required: true
+required: false
 },
 // user_id: {
 //     type: String,
@@ -12,11 +12,11 @@ required: true
 //     },
 collection_link: {
     type: String,
-    required:true
+    required:false
     },
     alert_floorprice: {
         type: Decimal128,
-        required:true
+        required:false
         },
         // alert_type: {
         //     type: String,
@@ -24,31 +24,31 @@ collection_link: {
         //     },
             alert_cat: {
                 type: String,
-                required:true
+                required:false
                 },
                 status: {
                     type: Number,
-                    required:true
+                    required:false
                     },
                     pushkey: {
                         type: String,
-                        required:true
+                        required:false
                         },
                         pushswitch: {
                             type: String,
-                            required:true
+                            required:false
                             },
                             imgprofile: {
                                 type: String,
-                                required:true
+                                required:false
                                 },
                                 eth_userinput: {
                                     type: Decimal128,
-                                    required:true
+                                    required:false
                                     },
                                     name_collection: {
                                         type: String,
-                                        required:true
+                                        required:false
                                         },
                                         mintdatum: {
                                             type: String,
