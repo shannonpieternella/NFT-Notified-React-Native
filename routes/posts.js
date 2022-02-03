@@ -15,7 +15,7 @@ const BSON = require('bson');
 const { count } = require('../models/Post');
 const Long = BSON.Long;
 const sgMail = require('@sendgrid/mail'); 
-const Postmint = require('../models/Postmint');
+// const Postmint = require('../models/Postmint');
 
 API_KEY = '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';
 
@@ -81,19 +81,19 @@ res.json(updatedPost);
         });
 
 
-        //get flatlist mintcompanies edit notification page
-        router.get('/mintcompanieslist/:postId', async (req,res) => {
-            try{
-        const updatedPost = await Postmint.find(
-            {email_id: req.params.postId,status: 0}, //creer dit in collectie
-        // { $set: { title: req.body.title }}
-        );
-        res.json(updatedPost);
-        } catch (err) {
-            res.json({ message: err});
+        // //get flatlist mintcompanies edit notification page
+        // router.get('/mintcompanieslist/:postId', async (req,res) => {
+        //     try{
+        // const updatedPost = await Postmint.find(
+        //     {email_id: req.params.postId,status: 0}, //creer dit in collectie
+        // // { $set: { title: req.body.title }}
+        // );
+        // res.json(updatedPost);
+        // } catch (err) {
+        //     res.json({ message: err});
         
-        }
-            });
+        // }
+        //     });
 
 //filtercollection
 
@@ -2454,35 +2454,35 @@ router.post('/collectionsnow', (req,res) => {
     }); //end request
 
    
-        // submit mint post
+        // // submit mint post
 
-        router.post('/mintpost', async (req,res) => {
-            const post = new Postmint({
-            email_id: req.body.email_id,
-            pushkey: req.body.pushkey,
-            imagecompany: req.body.imagecompany,
-            mintdatum:req.body.mintdatum,
-            revealdatum:req.body.revealdatum,
-            chosentime:req.body.chosentime,
-            statusnotification:req.body.statusnotification,
-            companymintname:req.body.companymintname,
-            datumnotification:req.body.datumnotification,
-            usernotification:req.body.usernotification,
-            checkboxarray:req.body.checkboxarray
+        // router.post('/mintpost', async (req,res) => {
+        //     const post = new Postmint({
+        //     email_id: req.body.email_id,
+        //     pushkey: req.body.pushkey,
+        //     imagecompany: req.body.imagecompany,
+        //     mintdatum:req.body.mintdatum,
+        //     revealdatum:req.body.revealdatum,
+        //     chosentime:req.body.chosentime,
+        //     statusnotification:req.body.statusnotification,
+        //     companymintname:req.body.companymintname,
+        //     datumnotification:req.body.datumnotification,
+        //     usernotification:req.body.usernotification,
+        //     checkboxarray:req.body.checkboxarray
         
-            });
+        //     });
             
-            post.save()
-            .then(data => {
-            res.json(data);
-            console.log('Post succeed sessh2');  
+        //     post.save()
+        //     .then(data => {
+        //     res.json(data);
+        //     console.log('Post succeed sessh2');  
         
-        })
-        .catch(err => { 
-            res.json({ message: err });
-            });
+        // })
+        // .catch(err => { 
+        //     res.json({ message: err });
+        //     });
     
-        }); //end request
+        // }); //end request
 
 
 
